@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/10/2024 11:49:32 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJOs.Clientes" table="clientes" catalog="libreria" optimistic-lock="version">
+        <id name="nitCliente" type="int">
+            <column name="nit_cliente" />
+            <generator class="assigned" />
+        </id>
+        <property name="estadoCliente" type="boolean">
+            <column name="estado_cliente" not-null="true" />
+        </property>
+        <property name="nombreCliente" type="string">
+            <column name="nombre_cliente" length="25" not-null="true" />
+        </property>
+        <property name="direccionCliente" type="string">
+            <column name="direccion_cliente" length="45" not-null="true" />
+        </property>
+        <property name="telefonoCliente" type="string">
+            <column name="telefono_cliente" length="15" not-null="true" />
+        </property>
+        <set name="ventases" table="ventas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nit_cliente" not-null="true" />
+            </key>
+            <one-to-many class="POJOs.Ventas" />
+        </set>
+    </class>
+</hibernate-mapping>

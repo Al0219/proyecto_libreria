@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/10/2024 11:49:32 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJOs.Categorias" table="categorias" catalog="libreria" optimistic-lock="version">
+        <id name="idCategoria" type="java.lang.Integer">
+            <column name="id_categoria" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreCategoria" type="string">
+            <column name="nombre_categoria" length="20" not-null="true" />
+        </property>
+        <property name="descripcionCategoria" type="string">
+            <column name="descripcion_categoria" length="50" not-null="true" />
+        </property>
+        <set name="productoses" table="productos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_categoria" not-null="true" />
+            </key>
+            <one-to-many class="POJOs.Productos" />
+        </set>
+    </class>
+</hibernate-mapping>
