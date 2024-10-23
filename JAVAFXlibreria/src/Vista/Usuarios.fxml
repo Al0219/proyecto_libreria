@@ -7,8 +7,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.UsuariosController">
+<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="1723.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.UsuariosController">
     <stylesheets>
-        <URL value="@usuarios.css"/>
+        <URL value="@usuarios.css" />
     </stylesheets>
+   <children>
+      <Label layoutX="106.0" layoutY="126.0" text="Usuario:" />
+      <Label layoutX="113.0" layoutY="220.0" text="Cargo:" />
+      <Label layoutX="106.0" layoutY="309.0" text="Contraseña:" />
+      <TextField fx:id="txtUsuario" layoutX="237.0" layoutY="120.0" prefHeight="39.0" prefWidth="240.0" />
+      <TextField fx:id="txtCargo" layoutX="237.0" layoutY="214.0" prefHeight="39.0" prefWidth="240.0" />
+      <TextField fx:id="txtContraseña" layoutX="237.0" layoutY="303.0" prefHeight="39.0" prefWidth="240.0" />
+      <TableView fx:id="tblUsuarios" layoutX="601.0" layoutY="114.0" prefHeight="356.0" prefWidth="976.0">
+        <columns>
+          <TableColumn fx:id="id_usuarios" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nombre" prefWidth="363.0" text="Nombre" />
+            <TableColumn fx:id="cargo" prefWidth="218.0" text="Cargo" />
+            <TableColumn fx:id="contrasenia" prefWidth="319.0" text="Contraseña" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnGuardar" layoutX="113.0" layoutY="381.0" mnemonicParsing="false" onAction="#insertar" text="Guardar usuario" />
+      <Button fx:id="btnActualizar" layoutX="312.0" layoutY="381.0" mnemonicParsing="false" onAction="#modificar" text="Actualizar usuario" />
+      <Button fx:id="btnAnular" layoutX="119.0" layoutY="446.0" mnemonicParsing="false" onAction="#anular" text="Anular usuario" />
+      <Button fx:id="btnCancelar" layoutX="349.0" layoutY="446.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+   </children>
 </AnchorPane>

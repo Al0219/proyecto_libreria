@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 21/10/2024 11:49:32 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 22/10/2024 10:43:16 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="POJOs.Ventas" table="ventas" catalog="libreria" optimistic-lock="version">
-        <id name="numeroVenta" type="int">
+        <id name="numeroVenta" type="java.lang.Integer">
             <column name="numero_venta" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="clientes" class="POJOs.Clientes" fetch="select">
             <column name="nit_cliente" not-null="true" />
         </many-to-one>
-        <many-to-one name="Usuarioss" class="POJOs.Usuarioss" fetch="select">
-            <column name="id_Usuarioss" not-null="true" />
+        <many-to-one name="usuarios" class="POJOs.Usuarios" fetch="select">
+            <column name="id_usuario" not-null="true" />
         </many-to-one>
         <property name="estadoVenta" type="boolean">
             <column name="estado_venta" not-null="true" />

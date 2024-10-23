@@ -1,5 +1,5 @@
 package POJOs;
-// Generated 21/10/2024 11:49:32 PM by Hibernate Tools 4.3.1
+// Generated 22/10/2024 10:43:15 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Proveedores  implements java.io.Serializable {
 
 
-     private int nitProveedor;
+     private Integer nitProveedor;
      private boolean estadoProveedor;
      private String nombreProveedor;
      private String direccionProveedor;
@@ -22,15 +22,13 @@ public class Proveedores  implements java.io.Serializable {
     }
 
 	
-    public Proveedores(int nitProveedor, boolean estadoProveedor, String nombreProveedor, String direccionProveedor, String telefonoProveedor) {
-        this.nitProveedor = nitProveedor;
+    public Proveedores(boolean estadoProveedor, String nombreProveedor, String direccionProveedor, String telefonoProveedor) {
         this.estadoProveedor = estadoProveedor;
         this.nombreProveedor = nombreProveedor;
         this.direccionProveedor = direccionProveedor;
         this.telefonoProveedor = telefonoProveedor;
     }
-    public Proveedores(int nitProveedor, boolean estadoProveedor, String nombreProveedor, String direccionProveedor, String telefonoProveedor, Set<Compras> comprases) {
-       this.nitProveedor = nitProveedor;
+    public Proveedores(boolean estadoProveedor, String nombreProveedor, String direccionProveedor, String telefonoProveedor, Set<Compras> comprases) {
        this.estadoProveedor = estadoProveedor;
        this.nombreProveedor = nombreProveedor;
        this.direccionProveedor = direccionProveedor;
@@ -38,11 +36,11 @@ public class Proveedores  implements java.io.Serializable {
        this.comprases = comprases;
     }
    
-    public int getNitProveedor() {
+    public Integer getNitProveedor() {
         return this.nitProveedor;
     }
     
-    public void setNitProveedor(int nitProveedor) {
+    public void setNitProveedor(Integer nitProveedor) {
         this.nitProveedor = nitProveedor;
     }
     public boolean isEstadoProveedor() {

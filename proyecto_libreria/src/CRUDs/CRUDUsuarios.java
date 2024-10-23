@@ -44,7 +44,7 @@ public class CRUDUsuarios{
     
     public static boolean crear(String nombreUsuarios, String cargoUsuarios, String contraseniaUsuarios){
         boolean flag = false;
-        Session session = HibernateUtil.HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Usuarios.class);
         criteria.add(Restrictions.eq("contraseniaIsuarios", contraseniaUsuarios));
         Usuarios insert = (Usuarios)criteria.uniqueResult();
@@ -53,10 +53,10 @@ public class CRUDUsuarios{
            transaction = session.beginTransaction();
            if(insert ==null){
                insert=new Usuarios();
-               insert.setEstadoUsuarios(true);
-               insert.setNombreUsuarios(nombreUsuarios);
-               insert.setCargoUsuarios(cargoUsuarios);
-               insert.setContraseniaUsuarios(contraseniaUsuarios);
+               insert.setEstadoUsuario(true);
+               insert.setNombreUsuario(nombreUsuarios);
+               insert.setCargoUsuario(cargoUsuarios);
+               insert.setContraseniaUsuario(contraseniaUsuarios);
                session.save(insert);
                flag=true;
            }
@@ -79,9 +79,9 @@ public class CRUDUsuarios{
         try{
            transaction = session.beginTransaction();
            if(insert != null){
-               insert.setNombreUsuarios(nombreUsuarios);
-               insert.setCargoUsuarios(cargoUsuarios);
-               insert.setContraseniaUsuarios(contraseniaUsuarios);
+               insert.setNombreUsuario(nombreUsuarios);
+               insert.setCargoUsuario(cargoUsuarios);
+               insert.setContraseniaUsuario(contraseniaUsuarios);
                session.update(insert);
                flag=true;
            }
@@ -104,7 +104,7 @@ public class CRUDUsuarios{
         try{
            transaction = session.beginTransaction();
            if(anular != null){
-               anular.setEstadoUsuarios(false);
+               anular.setEstadoUsuario(false);
                session.update(anular);
                flag=true;
            }

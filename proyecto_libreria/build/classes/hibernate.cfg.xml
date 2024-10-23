@@ -51,7 +51,7 @@ Contributor(s):
     <mapping resource="POJOs/DetalleVenta.hbm.xml"/>
     <mapping resource="POJOs/Ventas.hbm.xml"/>
     <mapping resource="POJOs/Clientes.hbm.xml"/>
-    <mapping resource="POJOs/Usuarioss.hbm.xml"/>
+    <mapping resource="POJOs/Usuarios.hbm.xml"/>
     <mapping resource="POJOs/Categorias.hbm.xml"/>
     <mapping resource="POJOs/Proveedores.hbm.xml"/>
     <mapping resource="POJOs/DetalleCompra.hbm.xml"/>
