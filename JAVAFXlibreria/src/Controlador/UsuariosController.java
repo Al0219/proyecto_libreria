@@ -62,7 +62,6 @@ public class UsuariosController implements Initializable {
         mostrar();
     }    
     
-    @FXML
     public void mostrar(){
         listaUsuarios = FXCollections.observableArrayList();
         for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
@@ -70,26 +69,24 @@ public class UsuariosController implements Initializable {
             listaUsuarios.add(new UsuariosTabla((Integer)item[0],(String)item[1],(String)item[2], (String)item[3]));
         }
         this.id_usuarios.setCellValueFactory(new PropertyValueFactory("idUsuario"));
-        this.nombre.setCellValueFactory(new PropertyValueFactory("nombreUsuarios"));
-        this.cargo.setCellValueFactory(new PropertyValueFactory("cargoUsuarios"));
-        this.contrasenia.setCellValueFactory(new PropertyValueFactory("contraseniaUsuarios"));
+        this.nombre.setCellValueFactory(new PropertyValueFactory("nombreUsuario"));
+        this.cargo.setCellValueFactory(new PropertyValueFactory("cargoUsuario"));
+        this.contrasenia.setCellValueFactory(new PropertyValueFactory("contraseniaUsuario"));
         tblUsuarios.setItems(listaUsuarios);
     }
 
-    @FXML
     private void seleccionarModificar(javafx.scene.input.MouseEvent event){
         UsuariosTabla p = this.tblUsuarios.getSelectionModel().getSelectedItem();
-        txtUsuario.setText(p.getNombreUsuarios());
-        txtCargo.setText(p.getCargoUsuarios());
-        txtContraseña.setText(p.getContraseniaUsuarios());
-        idUsuarioV = p.getIdUsuarios();
+        txtUsuario.setText(p.getNombreUsuario());
+        txtCargo.setText(p.getCargoUsuario());
+        txtContraseña.setText(p.getContraseniaUsuario());
+        idUsuarioV = p.getIdUsuario();
         btnGuardar.setVisible(false);
         btnActualizar.setVisible(true);
         btnAnular.setVisible(true);
         btnCancelar.setVisible(true);
     }
     
-    @FXML
     public void limpiar(){
         txtUsuario.setText("");
         txtCargo.setText("");
@@ -205,7 +202,6 @@ public class UsuariosController implements Initializable {
         limpiar();
     }
     
-    @FXML
     private void navegarCampos(TextField campoAnterior, TextField campoSiguiente){
         campoAnterior.setOnKeyPressed(event ->{
             switch(event.getCode()){

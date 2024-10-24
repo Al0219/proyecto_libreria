@@ -10,73 +10,73 @@ package Modelo;
  * @author 20041
  */
 public class UsuariosTabla {
-    private Integer idUsuarios;
-    private String nombreUsuarios;
-    private String cargoUsuarios;
-    private String contraseniaUsuarios;
+    private Integer idUsuario;
+    private String nombreUsuario;
+    private String cargoUsuario;
+    private String contraseniaUsuario;
 
     public UsuariosTabla(Integer idUsuarios, String nombreUsuarios, String cargoUsuarios, String contraseniaUsuarios) {
-        this.idUsuarios = idUsuarios;
-        this.nombreUsuarios = nombreUsuarios;
-        this.cargoUsuarios = cargoUsuarios;
-        this.contraseniaUsuarios = contraseniaUsuarios;
+        this.idUsuario = idUsuarios;
+        this.nombreUsuario = nombreUsuarios;
+        this.cargoUsuario = cargoUsuarios;
+        this.contraseniaUsuario = contraseniaUsuarios;
     }
 
     
     /**
      * @return the idUsuarios
      */
-    public Integer getIdUsuarios() {
-        return idUsuarios;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
     /**
      * @param idUsuarios the idUsuarios to set
      */
-    public void setIdUsuarios(Integer idUsuarios) {
-        this.idUsuarios = idUsuarios;
+    public void setIdUsuario(Integer idUsuarios) {
+        this.idUsuario = idUsuarios;
     }
 
     /**
      * @return the nombreUsuarios
      */
-    public String getNombreUsuarios() {
-        return nombreUsuarios;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
     /**
      * @param nombreUsuarios the nombreUsuarios to set
      */
-    public void setNombreUsuarios(String nombreUsuarios) {
-        this.nombreUsuarios = nombreUsuarios;
+    public void setNombreUsuario(String nombreUsuarios) {
+        this.nombreUsuario = nombreUsuarios;
     }
 
     /**
      * @return the cargoUsuarios
      */
-    public String getCargoUsuarios() {
-        return cargoUsuarios;
+    public String getCargoUsuario() {
+        return cargoUsuario;
     }
 
     /**
      * @param cargoUsuarios the cargoUsuarios to set
      */
-    public void setCargoUsuarios(String cargoUsuarios) {
-        this.cargoUsuarios = cargoUsuarios;
+    public void setCargoUsuario(String cargoUsuarios) {
+        this.cargoUsuario = cargoUsuarios;
     }
 
     /**
      * @return the contraseniaUsuarios
      */
-    public String getContraseniaUsuarios() {
-        return contraseniaUsuarios;
+    public String getContraseniaUsuario() {
+        return contraseniaUsuario;
     }
 
     /**
      * @param contraseniaUsuarios the contraseniaUsuarios to set
      */
-    public void setContraseniaUsuarios(String contraseniaUsuarios) {
-        this.contraseniaUsuarios = contraseniaUsuarios;
+    public void setContraseniaUsuario(String contraseniaUsuarios) {
+        this.contraseniaUsuario = contraseniaUsuarios;
     }
     
     

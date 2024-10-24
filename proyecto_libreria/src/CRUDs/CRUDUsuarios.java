@@ -25,7 +25,7 @@ public class CRUDUsuarios{
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(Usuarios.class);
-            criteria.add(Restrictions.eq("estado",true));
+            criteria.add(Restrictions.eq("estadoUsuario",true));
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("idUsuario"))
             .add(Projections.property("nombreUsuario"))
@@ -46,6 +46,7 @@ public class CRUDUsuarios{
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Usuarios.class);
+        criteria.add(Restrictions.eq("contraseniaUsuario", contraseniaUsuario));
         Usuarios insert = (Usuarios)criteria.uniqueResult();
         Transaction transaction=null;
         try{
