@@ -15,11 +15,11 @@ public class UsuariosTabla {
     private String cargoUsuario;
     private String contraseniaUsuario;
 
-    public UsuariosTabla(Integer idUsuarios, String nombreUsuarios, String cargoUsuarios, String contraseniaUsuarios) {
-        this.idUsuario = idUsuarios;
-        this.nombreUsuario = nombreUsuarios;
-        this.cargoUsuario = cargoUsuarios;
-        this.contraseniaUsuario = contraseniaUsuarios;
+    public UsuariosTabla(Integer idUsuario, String nombreUsuario, String cargoUsuario, String contraseniaUsuario) {
+        this.idUsuario = idUsuario;
+        this.nombreUsuario = nombreUsuario;
+        this.cargoUsuario = cargoUsuario;
+        this.contraseniaUsuario = contraseniaUsuario;
     }
 
     

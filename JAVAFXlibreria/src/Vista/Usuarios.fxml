@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="1723.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.UsuariosController">
+<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="1723.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.UsuariosController">
     <stylesheets>
         <URL value="@usuarios.css" />
     </stylesheets>
@@ -18,7 +18,7 @@
       <TextField fx:id="txtUsuario" layoutX="237.0" layoutY="120.0" prefHeight="39.0" prefWidth="240.0" />
       <TextField fx:id="txtCargo" layoutX="237.0" layoutY="214.0" prefHeight="39.0" prefWidth="240.0" />
       <TextField fx:id="txtContraseña" layoutX="237.0" layoutY="303.0" prefHeight="39.0" prefWidth="240.0" />
-      <TableView fx:id="tblUsuarios" layoutX="601.0" layoutY="114.0" prefHeight="356.0" prefWidth="976.0">
+      <TableView fx:id="tblUsuarios" layoutX="601.0" layoutY="114.0" onMouseClicked="#seleccionarModificar" prefHeight="356.0" prefWidth="976.0">
         <columns>
           <TableColumn fx:id="id_usuarios" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="nombre" prefWidth="363.0" text="Nombre" />

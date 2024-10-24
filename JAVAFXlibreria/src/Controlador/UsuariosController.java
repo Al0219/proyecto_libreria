@@ -75,16 +75,17 @@ public class UsuariosController implements Initializable {
         tblUsuarios.setItems(listaUsuarios);
     }
 
+    @FXML
     private void seleccionarModificar(javafx.scene.input.MouseEvent event){
         UsuariosTabla p = this.tblUsuarios.getSelectionModel().getSelectedItem();
         txtUsuario.setText(p.getNombreUsuario());
         txtCargo.setText(p.getCargoUsuario());
         txtContraseña.setText(p.getContraseniaUsuario());
         idUsuarioV = p.getIdUsuario();
-        btnGuardar.setVisible(false);
-        btnActualizar.setVisible(true);
-        btnAnular.setVisible(true);
-        btnCancelar.setVisible(true);
+        //btnGuardar.setVisible(false);
+        //btnActualizar.setVisible(true);
+        //btnAnular.setVisible(true);
+        //btnCancelar.setVisible(true);
     }
     
     public void limpiar(){
@@ -138,10 +139,10 @@ public class UsuariosController implements Initializable {
         alerta.setHeaderText(null);
         alerta.setContentText("Registro modificado");
         alerta.showAndWait();
-        btnGuardar.setVisible(true);
-        btnActualizar.setVisible(false);
-        btnAnular.setVisible(false);
-        btnCancelar.setVisible(false);
+        //btnGuardar.setVisible(true);
+        //btnActualizar.setVisible(false);
+        //btnAnular.setVisible(false);
+        //btnCancelar.setVisible(false);
         limpiar();
         }else{
             Alert alerta = new Alert(Alert.AlertType.ERROR);
@@ -170,10 +171,10 @@ public class UsuariosController implements Initializable {
         alerta.setHeaderText(null);
         alerta.setContentText("Registro anulado");
         alerta.showAndWait();
-        btnGuardar.setVisible(true);
-        btnActualizar.setVisible(false);
-        btnAnular.setVisible(false);
-        btnCancelar.setVisible(false);
+        //btnGuardar.setVisible(true);
+        //btnActualizar.setVisible(false);
+        //btnAnular.setVisible(false);
+        //btnCancelar.setVisible(false);
         limpiar();
         }else{
             Alert alerta = new Alert(Alert.AlertType.ERROR);
@@ -195,10 +196,10 @@ public class UsuariosController implements Initializable {
 
     @FXML
     private void cancelar(ActionEvent event) {
-        btnGuardar.setVisible(true);
-        btnActualizar.setVisible(false);
-        btnAnular.setVisible(false);
-        btnCancelar.setVisible(false);
+        //btnGuardar.setVisible(true);
+        //btnActualizar.setVisible(false);
+        //btnAnular.setVisible(false);
+        //btnCancelar.setVisible(false);
         limpiar();
     }
     
