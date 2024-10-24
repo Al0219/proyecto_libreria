@@ -17,14 +17,14 @@ public class proyecto_libreria {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("insertar"+CRUDs.CRUDUsuarios.crear("Alan", "Contador", "12345"));
-        /*for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
+        //System.out.println("insertar"+CRUDs.CRUDUsuarios.crear("Luciano", "Admin", "7988Ajdasdw"));
+        for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
-            System.out.println("idUsuarios"+ (Integer) item[0]);
-            System.out.println("nombreUsuarios"+ (String) item[1]);
-            System.out.println("cargoUsuarios"+ (String) item[2]);
-            System.out.println("contraseniausuarios"+ (String) item[3]);
-        }*/
+            System.out.println("idUsuario"+ (Integer) item[0]);
+            System.out.println("nombreUsuario"+ (String) item[1]);
+            System.out.println("cargoUsuario"+ (String) item[2]);
+            System.out.println("contraseniaUsuario"+ (String) item[3]);
+        }
         
     }
     

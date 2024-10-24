@@ -27,12 +27,12 @@ public class CRUDUsuarios{
             Criteria criteria = session.createCriteria(Usuarios.class);
             criteria.add(Restrictions.eq("estado",true));
             criteria.setProjection(Projections.projectionList()
-            .add(Projections.property("idUsuarios"))
-            .add(Projections.property("nombreUsuarios"))
-            .add(Projections.property("cargousuarios"))
+            .add(Projections.property("idUsuario"))
+            .add(Projections.property("nombreUsuario"))
+            .add(Projections.property("cargoUsuario"))
             .add(Projections.property("contraseniaUsuario"))
             );
-            criteria.addOrder(Order.desc("idUsuarios"));
+            criteria.addOrder(Order.desc("idUsuario"));
             lista = criteria.list();
         }catch(Exception e){
             System.out.println("error: "+e);
@@ -41,12 +41,11 @@ public class CRUDUsuarios{
         }
         return lista;
     }
-    
-    public static boolean crear(String nombreUsuarios, String cargoUsuarios, String contraseniaUsuarios){
+
+    public static boolean crear(String nombreUsuario, String cargoUsuario, String contraseniaUsuario){
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Usuarios.class);
-        criteria.add(Restrictions.eq("contraseniaIsuarios", contraseniaUsuarios));
         Usuarios insert = (Usuarios)criteria.uniqueResult();
         Transaction transaction=null;
         try{
@@ -54,9 +53,9 @@ public class CRUDUsuarios{
            if(insert ==null){
                insert=new Usuarios();
                insert.setEstadoUsuario(true);
-               insert.setNombreUsuario(nombreUsuarios);
-               insert.setCargoUsuario(cargoUsuarios);
-               insert.setContraseniaUsuario(contraseniaUsuarios);
+               insert.setNombreUsuario(nombreUsuario);
+               insert.setCargoUsuario(cargoUsuario);
+               insert.setContraseniaUsuario(contraseniaUsuario);
                session.save(insert);
                flag=true;
            }
@@ -69,19 +68,19 @@ public class CRUDUsuarios{
         return flag;
     }
     
-    public static boolean actualizar(Integer idUsuarios, String nombreUsuarios, String cargoUsuarios, String contraseniaUsuarios){
+    public static boolean actualizar(Integer idUsuario, String nombreUsuario, String cargoUsuario, String contraseniaUsuario){
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Usuarios.class);
-        criteria.add(Restrictions.eq("idUsuarios", idUsuarios));
+        criteria.add(Restrictions.eq("idUsuario", idUsuario));
         Usuarios insert = (Usuarios)criteria.uniqueResult();
         Transaction transaction=null;
         try{
            transaction = session.beginTransaction();
            if(insert != null){
-               insert.setNombreUsuario(nombreUsuarios);
-               insert.setCargoUsuario(cargoUsuarios);
-               insert.setContraseniaUsuario(contraseniaUsuarios);
+               insert.setNombreUsuario(nombreUsuario);
+               insert.setCargoUsuario(cargoUsuario);
+               insert.setContraseniaUsuario(contraseniaUsuario);
                session.update(insert);
                flag=true;
            }
@@ -94,11 +93,11 @@ public class CRUDUsuarios{
         return flag;
     }
     
-    public static boolean anular(Integer idUsuarios){
+    public static boolean anular(Integer idUsuario){
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Usuarios.class);
-        criteria.add(Restrictions.eq("idUsuarios", idUsuarios));
+        criteria.add(Restrictions.eq("idUsuario", idUsuario));
         Usuarios anular = (Usuarios)criteria.uniqueResult();
         Transaction transaction=null;
         try{

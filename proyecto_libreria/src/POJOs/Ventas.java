@@ -1,5 +1,5 @@
 package POJOs;
-// Generated 22/10/2024 10:43:15 PM by Hibernate Tools 4.3.1
+// Generated 23/10/2024 09:26:17 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
