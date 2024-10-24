@@ -1,5 +1,5 @@
 package POJOs;
-// Generated 21/10/2024 11:49:32 PM by Hibernate Tools 4.3.1
+// Generated 23/10/2024 09:26:17 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Clientes  implements java.io.Serializable {
 
 
-     private int nitCliente;
+     private Integer nitCliente;
      private boolean estadoCliente;
      private String nombreCliente;
      private String direccionCliente;
@@ -22,15 +22,13 @@ public class Clientes  implements java.io.Serializable {
     }
 
 	
-    public Clientes(int nitCliente, boolean estadoCliente, String nombreCliente, String direccionCliente, String telefonoCliente) {
-        this.nitCliente = nitCliente;
+    public Clientes(boolean estadoCliente, String nombreCliente, String direccionCliente, String telefonoCliente) {
         this.estadoCliente = estadoCliente;
         this.nombreCliente = nombreCliente;
         this.direccionCliente = direccionCliente;
         this.telefonoCliente = telefonoCliente;
     }
-    public Clientes(int nitCliente, boolean estadoCliente, String nombreCliente, String direccionCliente, String telefonoCliente, Set<Ventas> ventases) {
-       this.nitCliente = nitCliente;
+    public Clientes(boolean estadoCliente, String nombreCliente, String direccionCliente, String telefonoCliente, Set<Ventas> ventases) {
        this.estadoCliente = estadoCliente;
        this.nombreCliente = nombreCliente;
        this.direccionCliente = direccionCliente;
@@ -38,11 +36,11 @@ public class Clientes  implements java.io.Serializable {
        this.ventases = ventases;
     }
    
-    public int getNitCliente() {
+    public Integer getNitCliente() {
         return this.nitCliente;
     }
     
-    public void setNitCliente(int nitCliente) {
+    public void setNitCliente(Integer nitCliente) {
         this.nitCliente = nitCliente;
     }
     public boolean isEstadoCliente() {

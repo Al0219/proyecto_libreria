@@ -1,5 +1,5 @@
 package POJOs;
-// Generated 21/10/2024 11:49:32 PM by Hibernate Tools 4.3.1
+// Generated 23/10/2024 09:26:17 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,9 +12,9 @@ import java.util.Set;
 public class Ventas  implements java.io.Serializable {
 
 
-     private int numeroVenta;
+     private Integer numeroVenta;
      private Clientes clientes;
-     private Usuarios Usuarios;
+     private Usuarios usuarios;
      private boolean estadoVenta;
      private Date fechaVenta;
      private Set<DetalleVenta> detalleVentas = new HashSet<DetalleVenta>(0);
@@ -23,27 +23,25 @@ public class Ventas  implements java.io.Serializable {
     }
 
 	
-    public Ventas(int numeroVenta, Clientes clientes, Usuarios Usuarios, boolean estadoVenta, Date fechaVenta) {
-        this.numeroVenta = numeroVenta;
+    public Ventas(Clientes clientes, Usuarios usuarios, boolean estadoVenta, Date fechaVenta) {
         this.clientes = clientes;
-        this.Usuarios = Usuarios;
+        this.usuarios = usuarios;
         this.estadoVenta = estadoVenta;
         this.fechaVenta = fechaVenta;
     }
-    public Ventas(int numeroVenta, Clientes clientes, Usuarios Usuarios, boolean estadoVenta, Date fechaVenta, Set<DetalleVenta> detalleVentas) {
-       this.numeroVenta = numeroVenta;
+    public Ventas(Clientes clientes, Usuarios usuarios, boolean estadoVenta, Date fechaVenta, Set<DetalleVenta> detalleVentas) {
        this.clientes = clientes;
-       this.Usuarios = Usuarios;
+       this.usuarios = usuarios;
        this.estadoVenta = estadoVenta;
        this.fechaVenta = fechaVenta;
        this.detalleVentas = detalleVentas;
     }
    
-    public int getNumeroVenta() {
+    public Integer getNumeroVenta() {
         return this.numeroVenta;
     }
     
-    public void setNumeroVenta(int numeroVenta) {
+    public void setNumeroVenta(Integer numeroVenta) {
         this.numeroVenta = numeroVenta;
     }
     public Clientes getClientes() {
@@ -53,12 +51,12 @@ public class Ventas  implements java.io.Serializable {
     public void setClientes(Clientes clientes) {
         this.clientes = clientes;
     }
-    public Usuarios getUsuarioss() {
-        return this.Usuarios;
+    public Usuarios getUsuarios() {
+        return this.usuarios;
     }
     
-    public void setUsuarioss(Usuarios Usuarioss) {
-        this.Usuarios = Usuarioss;
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
     }
     public boolean isEstadoVenta() {
         return this.estadoVenta;

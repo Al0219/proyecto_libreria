@@ -1,5 +1,5 @@
 package POJOs;
-// Generated 21/10/2024 11:49:32 PM by Hibernate Tools 4.3.1
+// Generated 23/10/2024 09:26:17 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,9 +12,9 @@ import java.util.Set;
 public class Compras  implements java.io.Serializable {
 
 
-     private int numeroCompra;
+     private Integer numeroCompra;
      private Proveedores proveedores;
-     private Usuarios Usuarios;
+     private Usuarios usuarios;
      private boolean estadoCompra;
      private Date fechaCompra;
      private Set<DetalleCompra> detalleCompras = new HashSet<DetalleCompra>(0);
@@ -23,27 +23,25 @@ public class Compras  implements java.io.Serializable {
     }
 
 	
-    public Compras(int numeroCompra, Proveedores proveedores, Usuarios Usuarios, boolean estadoCompra, Date fechaCompra) {
-        this.numeroCompra = numeroCompra;
+    public Compras(Proveedores proveedores, Usuarios usuarios, boolean estadoCompra, Date fechaCompra) {
         this.proveedores = proveedores;
-        this.Usuarios = Usuarios;
+        this.usuarios = usuarios;
         this.estadoCompra = estadoCompra;
         this.fechaCompra = fechaCompra;
     }
-    public Compras(int numeroCompra, Proveedores proveedores, Usuarios Usuarios, boolean estadoCompra, Date fechaCompra, Set<DetalleCompra> detalleCompras) {
-       this.numeroCompra = numeroCompra;
+    public Compras(Proveedores proveedores, Usuarios usuarios, boolean estadoCompra, Date fechaCompra, Set<DetalleCompra> detalleCompras) {
        this.proveedores = proveedores;
-       this.Usuarios = Usuarios;
+       this.usuarios = usuarios;
        this.estadoCompra = estadoCompra;
        this.fechaCompra = fechaCompra;
        this.detalleCompras = detalleCompras;
     }
    
-    public int getNumeroCompra() {
+    public Integer getNumeroCompra() {
         return this.numeroCompra;
     }
     
-    public void setNumeroCompra(int numeroCompra) {
+    public void setNumeroCompra(Integer numeroCompra) {
         this.numeroCompra = numeroCompra;
     }
     public Proveedores getProveedores() {
@@ -54,11 +52,11 @@ public class Compras  implements java.io.Serializable {
         this.proveedores = proveedores;
     }
     public Usuarios getUsuarios() {
-        return this.Usuarios;
+        return this.usuarios;
     }
     
-    public void setUsuarios(Usuarios Usuarios) {
-        this.Usuarios = Usuarios;
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
     }
     public boolean isEstadoCompra() {
         return this.estadoCompra;

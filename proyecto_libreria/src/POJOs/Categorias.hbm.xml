@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 21/10/2024 11:49:32 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 23/10/2024 09:26:18 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="POJOs.Categorias" table="categorias" catalog="libreria" optimistic-lock="version">
         <id name="idCategoria" type="java.lang.Integer">
