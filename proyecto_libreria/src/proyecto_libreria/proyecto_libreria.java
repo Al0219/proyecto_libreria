@@ -17,7 +17,9 @@ public class proyecto_libreria {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("insertar"+CRUDs.CRUDUsuarios.crear("Luciano", "Admin", "7988Ajda"));
+        Float existencia = 3.00f, precioCosto=400.00f, precioVenta=600.00f;
+        System.out.println("insertar"+CRUDs.CRUDProductos.crear(1,"El señor de los anillos", "Libro de fantasia",existencia,precioCosto,precioVenta));
+        
         /*for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
             System.out.println("idUsuario"+ (Integer) item[0]);
