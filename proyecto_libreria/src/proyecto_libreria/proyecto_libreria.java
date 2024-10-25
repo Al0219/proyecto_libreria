@@ -19,7 +19,7 @@ public class proyecto_libreria {
      */
     public static void main(String[] args) {
         Date date = new Date();
-        System.out.println("insertar"+CRUDs.CRUDVentas.crear(1,1, date));
+        System.out.println("insertar"+CRUDs.CRUDCategorias.crear("Cuadernos","Todos los cuadernos"));
         //System.out.println("insertar"+CRUDs.CRUDProveedores.crear("Juan","Guatemala","45795684"));
         
         /*for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){

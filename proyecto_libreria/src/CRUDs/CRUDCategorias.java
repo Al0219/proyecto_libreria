@@ -28,7 +28,7 @@ public class CRUDCategorias {
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("idCategoria"))
             .add(Projections.property("nombreCategoria"))
-            .add(Projections.property("descripçionCategoria"))
+            .add(Projections.property("descripcionCategoria"))
             );
             criteria.addOrder(Order.desc("idCategoria"));
             lista = criteria.list();

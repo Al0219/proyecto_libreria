@@ -47,13 +47,13 @@ Contributor(s):
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">equipoUno2024</property>
     <mapping resource="POJOs/Compras.hbm.xml"/>
-    <mapping resource="POJOs/Productos.hbm.xml"/>
-    <mapping resource="POJOs/DetalleVenta.hbm.xml"/>
-    <mapping resource="POJOs/Ventas.hbm.xml"/>
-    <mapping resource="POJOs/Clientes.hbm.xml"/>
-    <mapping resource="POJOs/Usuarios.hbm.xml"/>
-    <mapping resource="POJOs/Categorias.hbm.xml"/>
     <mapping resource="POJOs/Proveedores.hbm.xml"/>
+    <mapping resource="POJOs/DetalleVenta.hbm.xml"/>
+    <mapping resource="POJOs/Clientes.hbm.xml"/>
+    <mapping resource="POJOs/Productos.hbm.xml"/>
+    <mapping resource="POJOs/Categorias.hbm.xml"/>
+    <mapping resource="POJOs/Usuarios.hbm.xml"/>
     <mapping resource="POJOs/DetalleCompra.hbm.xml"/>
+    <mapping resource="POJOs/Ventas.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
