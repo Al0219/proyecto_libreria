@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>src/POJOs/Proveedores.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>42</line>
+                <key/>
+            </bookmark>
+        </file>
         <file>
             <url>src/CRUDs/CRUDCompras.java</url>
             <bookmark id="1">
                 <name/>
-                <line>31</line>
+                <line>36</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/20041/OneDrive/Documentos/GitHub/Proyecto_Libreria/proyecto_libreria/proyecto_libreria/src/CRUDs/CRUDCompras.java</file>
-            <file>file:/C:/Users/20041/OneDrive/Documentos/GitHub/Proyecto_Libreria/proyecto_libreria/proyecto_libreria/src/POJOs/Compras.java</file>
-            <file>file:/C:/Users/20041/OneDrive/Documentos/GitHub/Proyecto_Libreria/proyecto_libreria/proyecto_libreria/src/CRUDs/CRUDDetalleCompra.java</file>
+            <file>file:/C:/Users/20041/OneDrive/Documentos/GitHub/Proyecto_Libreria/proyecto_libreria/proyecto_libreria/src/POJOs/Productos.java</file>
+            <file>file:/C:/Users/20041/OneDrive/Documentos/GitHub/Proyecto_Libreria/proyecto_libreria/proyecto_libreria/src/CRUDs/CRUDDetalleVenta.java</file>
+            <file>file:/C:/Users/20041/OneDrive/Documentos/GitHub/Proyecto_Libreria/proyecto_libreria/proyecto_libreria/src/proyecto_libreria/proyecto_libreria.java</file>
         </group>
     </open-files>
 </project-private>

@@ -39,6 +39,7 @@ public class CRUDCategorias {
         }
         return lista;
     }
+//    
 
     public static boolean crear(String nombreCategoria, String descripcionCategoria){
         boolean flag = false;

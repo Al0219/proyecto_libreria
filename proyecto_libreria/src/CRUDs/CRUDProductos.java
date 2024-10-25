@@ -25,7 +25,7 @@ public class CRUDProductos {
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(Productos.class);
-            criteria.createAlias("Categorias","p");
+            criteria.createAlias("Productos","p");
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("idProducto"))
             .add(Projections.property("p.nombreCategoria"))
@@ -45,7 +45,7 @@ public class CRUDProductos {
         return lista;
     }
 
-    public static boolean crear(Integer idCategoria, String nombreProducto, String descripcionProducto, Float existencia, Float precioCosto, Float precioVenta){
+    public static boolean crear(String nombreCategoria, String nombreProducto, String descripcionProducto, Float existencia, Float precioCosto, Float precioVenta){
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Productos.class);
@@ -57,7 +57,7 @@ public class CRUDProductos {
            if(insert ==null){
                insert=new Productos();
                Categorias Categorias= new Categorias();
-               Categorias.setIdCategoria(idCategoria);
+               Categorias.setNombreCategoria(nombreCategoria);
                insert.setCategorias(Categorias);
                insert.setNombreProducto(nombreProducto);
                insert.setDescripcionProducto(descripcionProducto);
