@@ -6,6 +6,9 @@
 package CRUDs;
 
 import POJOs.Compras;
+import POJOs.Proveedores;
+import POJOs.Usuarios;
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -25,11 +28,13 @@ public class CRUDCompras {
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(Compras.class);
+            criteria.createAlias("Proveedores","p");
+            criteria.createAlias("Usuarios","u");
             criteria.add(Restrictions.eq("estadoCompra",true));
             criteria.setProjection(Projections.projectionList()
-                    .add(Projections.property("numeroCompra"))
-            .add(Projections.property("proveedores"))
-            .add(Projections.property("usuarios"))
+            .add(Projections.property("numeroCompra"))
+            .add(Projections.property("p.nitProveedor"))
+            .add(Projections.property("u.idUsuario"))
             .add(Projections.property("fechaCompra"))
             );
             criteria.addOrder(Order.desc("numeroCompra"));
@@ -42,21 +47,24 @@ public class CRUDCompras {
         return lista;
     }
 
-    public static boolean crear(String nombreCompra, String cargoCompra, String contraseniaCompra){
+    public static boolean crear(Integer nitProveedor, Integer idUsuario, Date fechaCompra){
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Compras.class);
-        criteria.add(Restrictions.eq("contraseniaCompra", contraseniaCompra));
         Compras insert = (Compras)criteria.uniqueResult();
         Transaction transaction=null;
         try{
            transaction = session.beginTransaction();
            if(insert ==null){
                insert=new Compras();
+               Proveedores proveedores = new Proveedores();
+               proveedores.setNitProveedor(nitProveedor);
+               insert.setProveedores(proveedores);
+               Usuarios usuarios  = new Usuarios();
                insert.setEstadoCompra(true);
-               insert.setNombreCompra(nombreCompra);
-               insert.setCargoCompra(cargoCompra);
-               insert.setContraseniaCompra(contraseniaCompra);
+               usuarios.setIdUsuario(idUsuario);
+               insert.setUsuarios(usuarios);
+               insert.setFechaCompra(fechaCompra);
                session.save(insert);
                flag=true;
            }
@@ -69,36 +77,11 @@ public class CRUDCompras {
         return flag;
     }
     
-    public static boolean actualizar(Integer idCompra, String nombreCompra, String cargoCompra, String contraseniaCompra){
+    public static boolean anular(Integer numeroCompra){
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Compras.class);
-        criteria.add(Restrictions.eq("idCompra", idCompra));
-        Compras insert = (Compras)criteria.uniqueResult();
-        Transaction transaction=null;
-        try{
-           transaction = session.beginTransaction();
-           if(insert != null){
-               insert.setNombreCompra(nombreCompra);
-               insert.setCargoCompra(cargoCompra);
-               insert.setContraseniaCompra(contraseniaCompra);
-               session.update(insert);
-               flag=true;
-           }
-            transaction.commit();
-        }catch(Exception e){
-            transaction.rollback();
-        }finally{
-            session.close();
-        }
-        return flag;
-    }
-    
-    public static boolean anular(Integer idCompra){
-        boolean flag = false;
-        Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
-        Criteria criteria = session.createCriteria(Compras.class);
-        criteria.add(Restrictions.eq("idCompra", idCompra));
+        criteria.add(Restrictions.eq("numeroCompra", numeroCompra));
         Compras anular = (Compras)criteria.uniqueResult();
         Transaction transaction=null;
         try{

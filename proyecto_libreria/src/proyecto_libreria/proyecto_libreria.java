@@ -5,6 +5,7 @@
  */
 package proyecto_libreria;
 
+import java.util.Date;
 import java.util.Iterator;
 
 /**
@@ -17,8 +18,9 @@ public class proyecto_libreria {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Float existencia = 3.00f, precioCosto=400.00f, precioVenta=600.00f;
-        System.out.println("insertar"+CRUDs.CRUDProductos.crear(1,"El señor de los anillos", "Libro de fantasia",existencia,precioCosto,precioVenta));
+        Date date = new Date();
+        System.out.println("insertar"+CRUDs.CRUDVentas.crear(1,1, date));
+        //System.out.println("insertar"+CRUDs.CRUDProveedores.crear("Juan","Guatemala","45795684"));
         
         /*for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
