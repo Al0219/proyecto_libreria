@@ -27,7 +27,7 @@ public class Main extends Application{
         try{
             Stage stage = new Stage();
             stage.setFullScreen(true);
-            Parent root=FXMLLoader.load(getClass().getResource("/Vista/Productos.fxml"));
+            Parent root=FXMLLoader.load(getClass().getResource("/Vista/MenuPrincipal.fxml"));
             primaryStage.setTitle("Menu");
             primaryStage.setScene(new Scene(root));
             primaryStage.isFullScreen();

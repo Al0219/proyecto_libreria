@@ -21,9 +21,9 @@ public class ProductosTabla {
      private float precioCosto;
      private float precioVenta;
 
-    public ProductosTabla(Integer idProducto, Categorias categorias, String nombreProducto, String descripcionProducto, float existencia, float precioCosto, float precioVenta) {
+    public ProductosTabla(Integer idProducto, Integer idDategoria, String nombreProducto, String descripcionProducto, float existencia, float precioCosto, float precioVenta) {
         this.idProducto = idProducto;
-        this.categorias = categorias;
+        this.idCategoria = idCategoria;
         this.nombreProducto = nombreProducto;
         this.descripcionProducto = descripcionProducto;
         this.existencia = existencia;

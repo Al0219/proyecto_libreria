@@ -7,8 +7,40 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.DetalleVentaController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.DetalleVentaController">
     <stylesheets>
-        <URL value="@detalleventa.css"/>
+        <URL value="@detalleventa.css" />
     </stylesheets>
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="878.0" prefWidth="1506.0" styleClass="mainFxmlClass">
+         <children>
+            <Label layoutX="91.0" layoutY="84.0" text="Numero de Documento" />
+            <Label layoutX="91.0" layoutY="142.0" text="Numero de venta" />
+            <Label layoutX="91.0" layoutY="201.0" text="ID del producto" />
+            <Label layoutX="845.0" layoutY="84.0" text="Cantidad" />
+            <Label layoutX="845.0" layoutY="142.0" text="Precio unitario" />
+            <TextField fx:id="txtNumDoc" layoutX="317.0" layoutY="78.0" prefHeight="39.0" prefWidth="432.0" />
+            <TextField fx:id="txtNumVenta" layoutX="317.0" layoutY="136.0" prefHeight="39.0" prefWidth="432.0" />
+            <TextField fx:id="txtIdProd" layoutX="317.0" layoutY="195.0" prefHeight="39.0" prefWidth="432.0" />
+            <TextField fx:id="txtcantidad" layoutX="983.0" layoutY="78.0" prefHeight="39.0" prefWidth="432.0" />
+            <TextField fx:id="txtPrecioUnit" layoutX="983.0" layoutY="136.0" prefHeight="39.0" prefWidth="432.0" />
+            <Button fx:id="btnGuardar" layoutX="840.0" layoutY="195.0" mnemonicParsing="false" onAction="#insertar" text="Guardar venta" />
+            <Button fx:id="btnActualizar" layoutX="1048.0" layoutY="195.0" mnemonicParsing="false" onAction="#modificar" text="Actualizar venta" />
+            <Button fx:id="txtCancelar" layoutX="1252.0" layoutY="195.0" mnemonicParsing="false" onAction="#cancelar" text="Regresar al menú" />
+            <TableView fx:id="tblDetallesVentas" layoutX="91.0" layoutY="262.0" onMouseClicked="#seleccionarModificar" prefHeight="531.0" prefWidth="1324.0">
+               <columns>
+                  <TableColumn fx:id="numDoc" prefWidth="219.0" text="Numero de Documento" />
+                  <TableColumn fx:id="numVenta" prefWidth="188.0" text="Numero de venta" />
+                  <TableColumn fx:id="idProd" prefWidth="206.0" text="ID producto" />
+                  <TableColumn fx:id="cantidad" prefWidth="221.0" text="Cantidad" />
+                  <TableColumn fx:id="precioUnit" prefWidth="257.0" text="Precio Unitario" />
+                  <TableColumn fx:id="total" prefWidth="232.0" text="Total" />
+               </columns>
+            </TableView>
+         </children>
+         <stylesheets>
+            <URL value="@detallecompra.css" />
+         </stylesheets>
+      </AnchorPane>
+   </children>
 </AnchorPane>

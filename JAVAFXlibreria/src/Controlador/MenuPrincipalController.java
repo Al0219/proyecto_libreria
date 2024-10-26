@@ -10,10 +10,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -22,6 +24,21 @@ import javafx.stage.Stage;
  * @author 20041
  */
 public class MenuPrincipalController implements Initializable {
+
+    @FXML
+    private Button btnUsuarios;
+    @FXML
+    private Button btnClientes;
+    @FXML
+    private Button btnProveedores;
+    @FXML
+    private Button btnCategorias;
+    @FXML
+    private Button btnProductos;
+    @FXML
+    private Button btnCompras;
+    @FXML
+    private Button btnVentas;
     /**
      * Initializes the controller class.
      */
@@ -30,6 +47,7 @@ public class MenuPrincipalController implements Initializable {
         // TODO
     }   
     
+    @FXML
     public void abrirUsuarios(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Usuarios.fxml"));
@@ -46,6 +64,7 @@ public class MenuPrincipalController implements Initializable {
         }
     }
     
+    @FXML
     public void abrirClientes(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Clientes.fxml"));
@@ -63,6 +82,7 @@ public class MenuPrincipalController implements Initializable {
         }
     }
     
+    @FXML
     public void abrirCategorias(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Categorias.fxml"));
@@ -79,6 +99,7 @@ public class MenuPrincipalController implements Initializable {
         }
     }
      
+    @FXML
     public void abrirProductos(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Productos.fxml"));
@@ -97,6 +118,7 @@ public class MenuPrincipalController implements Initializable {
         }
     }
     
+    @FXML
     public void abrirProveedores(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Proveedores.fxml"));
@@ -112,12 +134,13 @@ public class MenuPrincipalController implements Initializable {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    @FXML
     public void abrirCompras(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Compras.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/DetalleCompra.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
-            stage.setTitle("Compras");
+            stage.setTitle("DetalleCompra");
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -142,12 +165,13 @@ public class MenuPrincipalController implements Initializable {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    @FXML
     public void abrirVentas(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Ventas.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/DetalleVentas.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
-            stage.setTitle("Ventas");
+            stage.setTitle("DetalleVentas");
             
             Scene scene = new Scene(root);
             stage.setScene(scene);

@@ -76,7 +76,7 @@ public class VentasController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        modificar();
+        mostrar();
         // TODO
     }    
     

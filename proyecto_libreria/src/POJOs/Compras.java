@@ -36,6 +36,9 @@ public class Compras  implements java.io.Serializable {
        this.fechaCompra = fechaCompra;
        this.detalleCompras = detalleCompras;
     }
+    public Compras(Integer numeroCompra) {
+        this.numeroCompra = numeroCompra; 
+    }
    
     public Integer getNumeroCompra() {
         return this.numeroCompra;
