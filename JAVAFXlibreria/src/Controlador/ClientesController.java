@@ -224,7 +224,6 @@ public class ClientesController implements Initializable {
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(ClientesController.class.getName()).log(Level.SEVERE, null, ex);

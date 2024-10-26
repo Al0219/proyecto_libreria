@@ -9,81 +9,50 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="881.0" prefWidth="1358.0" style="-fx-background-color: #30373e;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="1242.0" prefWidth="2002.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
     <stylesheets>
         <URL value="@menuprincipal.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnUsuarios" layoutX="587.0" layoutY="333.0" mnemonicParsing="false" onAction="#abrirUsuarios" text="Ir a Usuarios" textFill="#030303">
+      <Button fx:id="btnUsuarios" defaultButton="true" layoutX="297.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirUsuarios" text="Ir a Usuarios" textFill="#e10a87">
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font size="30.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
       </Button>
-      <Button fx:id="btnClientes" layoutX="1131.0" layoutY="333.0" mnemonicParsing="false" onAction="#abrirClientes" text="Ir a Clientes" textFill="#030303">
+      <Button fx:id="btnClientes" defaultButton="true" layoutX="841.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirClientes" text="Ir a Clientes" textFill="#d01aa3">
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font size="30.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
       </Button>
-      <Button fx:id="btnProveedores" layoutX="835.0" layoutY="333.0" mnemonicParsing="false" onAction="#abrirProveedores" text="Ir a Proveedores" textFill="#030303">
+      <Button fx:id="btnProveedores" defaultButton="true" layoutX="545.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirProveedores" text="Ir a Proveedores" textFill="#cd199a">
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font size="30.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
       </Button>
-      <Button fx:id="btnCategorias" layoutX="676.0" layoutY="448.0" mnemonicParsing="false" onAction="#abrirCategorias" text="Ir a Categorías" textFill="#030303">
+      <Button fx:id="btnCategorias" defaultButton="true" layoutX="386.0" layoutY="412.0" mnemonicParsing="false" onAction="#abrirCategorias" text="Ir a Categorías" textFill="#c60997">
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font size="30.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
       </Button>
-      <Button fx:id="btnProductos" layoutX="1019.0" layoutY="448.0" mnemonicParsing="false" onAction="#abrirProductos" text="Ir a Productos" textFill="#030303">
+      <Button fx:id="btnProductos" defaultButton="true" layoutX="729.0" layoutY="412.0" mnemonicParsing="false" onAction="#abrirProductos" text="Ir a Productos" textFill="#e814b3">
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font size="30.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
       </Button>
-      <Button fx:id="btnCompras" layoutX="632.0" layoutY="572.0" mnemonicParsing="false" onAction="#abrirCompras" text="Registar una Compra" textFill="#030303">
+      <Button fx:id="btnCompras" defaultButton="true" layoutX="342.0" layoutY="536.0" mnemonicParsing="false" onAction="#abrirCompras" text="Registar una Compra" textFill="#e11dba">
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font size="30.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
       </Button>
-      <Button fx:id="btnVentas" layoutX="1034.0" layoutY="572.0" mnemonicParsing="false" onAction="#abrirVentas" text="Registrar una Venta" textFill="#030303">
+      <Button fx:id="btnVentas" defaultButton="true" layoutX="744.0" layoutY="536.0" mnemonicParsing="false" onAction="#abrirDetalleVenta" text="Registrar una Venta" textFill="#bc1b7e">
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font size="30.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
       </Button>
-      <Label layoutX="707.0" layoutY="234.0" prefHeight="73.0" prefWidth="477.0" text="Libreria el Programador." textFill="#fffdfd">
+      <Label layoutX="417.0" layoutY="198.0" prefHeight="73.0" prefWidth="477.0" text="Libreria el Programador." textFill="#d00e0e">
          <font>
-            <Font name="Times New Roman Bold" size="42.0" />
+            <Font size="42.0" />
          </font>
       </Label>
-      <ImageView fitHeight="376.0" fitWidth="419.0" layoutX="113.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../Downloads/libreriaimagen.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="183.0" fitWidth="266.0" layoutX="1133.0" layoutY="662.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../Downloads/programaimagen.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
