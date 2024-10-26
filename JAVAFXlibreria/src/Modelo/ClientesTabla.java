@@ -16,6 +16,16 @@ public class ClientesTabla {
     private String direccionCliente;
     private Integer telefonCliente;
 
+    public ClientesTabla(Integer nitPersona, String nombreCliente, String direccionCliente, Integer telefonCliente) {
+        this.nitPersona = nitPersona;
+        this.nombreCliente = nombreCliente;
+        this.direccionCliente = direccionCliente;
+        this.telefonCliente = telefonCliente;
+    }
+    
+    
+    
+
     /**
      * @return the nitPersona
      */
