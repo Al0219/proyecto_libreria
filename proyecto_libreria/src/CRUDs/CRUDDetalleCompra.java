@@ -22,6 +22,8 @@ import org.hibernate.criterion.Restrictions;
  * @author 20041
  */
 public class CRUDDetalleCompra {
+    Compras compras = new Compras();
+    Productos productos = new Productos();
     public static List<DetalleCompra>universo(){
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         List<DetalleCompra> lista=null;
