@@ -9,50 +9,60 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="1242.0" prefWidth="2002.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="1242.0" prefWidth="2002.0" style="-fx-background-color: #30373e;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
     <stylesheets>
         <URL value="@menuprincipal.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnUsuarios" defaultButton="true" layoutX="297.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirUsuarios" text="Ir a Usuarios" textFill="#e10a87">
+      <Button fx:id="btnUsuarios" layoutX="692.0" layoutY="469.0" mnemonicParsing="false" onAction="#abrirUsuarios" text="Ir a Usuarios" textFill="#252324">
          <font>
-            <Font size="30.0" />
+            <Font name="System Italic" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnClientes" defaultButton="true" layoutX="841.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirClientes" text="Ir a Clientes" textFill="#d01aa3">
+      <Button fx:id="btnClientes" layoutX="1236.0" layoutY="469.0" mnemonicParsing="false" onAction="#abrirClientes" text="Ir a Clientes" textFill="#252324">
          <font>
-            <Font size="30.0" />
+            <Font name="System Italic" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnProveedores" defaultButton="true" layoutX="545.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirProveedores" text="Ir a Proveedores" textFill="#cd199a">
+      <Button fx:id="btnProveedores" layoutX="940.0" layoutY="469.0" mnemonicParsing="false" onAction="#abrirProveedores" text="Ir a Proveedores" textFill="#252324">
          <font>
-            <Font size="30.0" />
+            <Font name="System Italic" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnCategorias" defaultButton="true" layoutX="386.0" layoutY="412.0" mnemonicParsing="false" onAction="#abrirCategorias" text="Ir a Categorías" textFill="#c60997">
+      <Button fx:id="btnCategorias" layoutX="781.0" layoutY="584.0" mnemonicParsing="false" onAction="#abrirCategorias" text="Ir a Categorías" textFill="#252324">
          <font>
-            <Font size="30.0" />
+            <Font name="System Italic" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnProductos" defaultButton="true" layoutX="729.0" layoutY="412.0" mnemonicParsing="false" onAction="#abrirProductos" text="Ir a Productos" textFill="#e814b3">
+      <Button fx:id="btnProductos" layoutX="1124.0" layoutY="584.0" mnemonicParsing="false" onAction="#abrirProductos" text="Ir a Productos" textFill="#252324">
          <font>
-            <Font size="30.0" />
+            <Font name="System Italic" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnCompras" defaultButton="true" layoutX="342.0" layoutY="536.0" mnemonicParsing="false" onAction="#abrirCompras" text="Registar una Compra" textFill="#e11dba">
+      <Button fx:id="btnCompras" layoutX="737.0" layoutY="708.0" mnemonicParsing="false" onAction="#abrirCompras" text="Registar una Compra" textFill="#252324">
          <font>
-            <Font size="30.0" />
+            <Font name="System Italic" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnVentas" defaultButton="true" layoutX="744.0" layoutY="536.0" mnemonicParsing="false" onAction="#abrirDetalleVenta" text="Registrar una Venta" textFill="#bc1b7e">
+      <Button fx:id="btnVentas" layoutX="1139.0" layoutY="708.0" mnemonicParsing="false" onAction="#abrirDetalleVenta" text="Registrar una Venta" textFill="#252324">
          <font>
-            <Font size="30.0" />
+            <Font name="System Italic" size="30.0" />
          </font>
       </Button>
-      <Label layoutX="417.0" layoutY="198.0" prefHeight="73.0" prefWidth="477.0" text="Libreria el Programador." textFill="#d00e0e">
+      <Label layoutX="812.0" layoutY="370.0" prefHeight="73.0" prefWidth="492.0" text="Libreria el Programador." textFill="#e8e3e3">
          <font>
-            <Font size="42.0" />
+            <Font name="System Bold" size="42.0" />
          </font>
       </Label>
+      <ImageView fitHeight="263.0" fitWidth="316.0" layoutX="417.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/libreriaimagen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="221.0" fitWidth="239.0" layoutX="1365.0" layoutY="803.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/programaimagen.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
