@@ -22,7 +22,7 @@ public class proyecto_libreria {
         Integer nDoc= 1, nVenta= 1, id= 1
                 ;
         
-        System.out.println("insertar"+CRUDs.CRUDDetalleVenta.crear(nDoc,nVenta, id, cantidad));
+        //System.out.println("insertar"+CRUDs.CRUDDetalleVenta.crear(nDoc,nVenta, id, cantidad));
         
         /*for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
