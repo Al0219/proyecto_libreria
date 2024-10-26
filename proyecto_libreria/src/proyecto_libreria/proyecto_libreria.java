@@ -18,8 +18,6 @@ public class proyecto_libreria {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Date date = new Date();
-        System.out.println("insertar"+CRUDs.CRUDCategorias.crear("Cuadernos","Todos los cuadernos"));
         //System.out.println("insertar"+CRUDs.CRUDProveedores.crear("Juan","Guatemala","45795684"));
         
         /*for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
