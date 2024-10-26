@@ -90,7 +90,7 @@ public class ProductosController implements Initializable {
         listaProductos = FXCollections.observableArrayList();
         for (Iterator it = CRUDs.CRUDProductos.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
-            listaProductos.add(new ProductosTabla((Integer)item[0],(Categorias)item[1],(String)item[2],(String)item[3],(Float)item[4],(Float)item[5],(Float)item[6]));
+            listaProductos.add(new ProductosTabla((Integer)item[0],(Categorias)item[1],(String)item[2], (String)item[3], (Float)item[4], (Float)item[5],(Float)item[6]));
         }
         this.id.setCellValueFactory(new PropertyValueFactory("idProducto"));
         this.categoria.setCellValueFactory(new PropertyValueFactory("categorias"));

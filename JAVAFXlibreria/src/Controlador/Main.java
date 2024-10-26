@@ -23,7 +23,7 @@ public class Main extends Application{
      */
     public void start(Stage primaryStage ){
         try{
-            Parent root=FXMLLoader.load(getClass().getResource("/Vista/Clientes.fxml"));
+            Parent root=FXMLLoader.load(getClass().getResource("/Vista/Productos.fxml"));
             primaryStage.setTitle("Menu");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();

@@ -77,7 +77,7 @@ public class ProveedoresController implements Initializable {
     
     public void mostrar(){
         listaProveedores = FXCollections.observableArrayList();
-        for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
+        for (Iterator it = CRUDs.CRUDProveedores.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
             listaProveedores.add(new ProveedoresTabla((Integer)item[0],(String)item[1],(String)item[2],(Integer)item[3]));
         }

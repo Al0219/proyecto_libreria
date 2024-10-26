@@ -25,7 +25,7 @@ public class CRUDProductos {
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(Productos.class);
-            criteria.createAlias("Categorias","c");
+            criteria.createAlias("categorias","c");
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("idProducto"))
             .add(Projections.property("c.idCategoria"))
