@@ -164,13 +164,14 @@ public class CategoriasController implements Initializable {
     @FXML
     private void cancelar(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Usuarios.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/MenuPrincipal.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle("MenuPrincipal");
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(CategoriasController.class.getName()).log(Level.SEVERE, null, ex);

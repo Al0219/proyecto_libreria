@@ -57,6 +57,7 @@ public class ProveedoresController implements Initializable {
     @FXML
     private TableColumn<?, ?> telefonoProveedor;
     
+    @FXML
     private TableView<ProveedoresTabla> tblProveedores;
     private Integer nitProvedoress;
     private ObservableList<ProveedoresTabla> listaProveedores;
@@ -70,7 +71,7 @@ public class ProveedoresController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        mostrar();
         // TODO
     }    
     
@@ -78,7 +79,7 @@ public class ProveedoresController implements Initializable {
         listaProveedores = FXCollections.observableArrayList();
         for (Iterator it = CRUDs.CRUDProveedores.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
-            listaProveedores.add(new ProveedoresTabla((Integer)item[0],(String)item[1],(String)item[2],(Integer)item[3]));
+            listaProveedores.add(new ProveedoresTabla((Integer)item[0],(String)item[1],(String)item[2],(String)item[3]));
         }
         this.nitProveedor.setCellValueFactory(new PropertyValueFactory("nitProveedor"));
         this.nombreProveedor.setCellValueFactory(new PropertyValueFactory("nombreProveedor"));
@@ -86,6 +87,7 @@ public class ProveedoresController implements Initializable {
         this.telefonoProveedor.setCellValueFactory(new PropertyValueFactory("telefonoProveedor"));
         tblProveedores.setItems(listaProveedores);
     }
+    @FXML
     private void seleccionarModificar(javafx.scene.input.MouseEvent event){
         ProveedoresTabla p = this.tblProveedores.getSelectionModel().getSelectedItem();
         txtNombre.setText(p.getNombreProveedor());
@@ -104,6 +106,7 @@ public class ProveedoresController implements Initializable {
         txtTelefono.setText("");
     }
     
+    @FXML
     private void insertar() {
         try{
         String nombre, direccion;
@@ -135,6 +138,7 @@ public class ProveedoresController implements Initializable {
         }
     }
 
+    @FXML
     private void modificar() {
         try{
         String nombre, direccion;
@@ -175,6 +179,7 @@ public class ProveedoresController implements Initializable {
         }
     }
 
+    @FXML
     private void anular() {
         try{
         if(CRUDs.CRUDProveedores.anular(getNitProveedor())){
@@ -208,6 +213,7 @@ public class ProveedoresController implements Initializable {
         }
     }
     
+    @FXML
     private void cancelar(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/MenuPrincipal.fxml"));
@@ -217,6 +223,7 @@ public class ProveedoresController implements Initializable {
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(ProveedoresController.class.getName()).log(Level.SEVERE, null, ex);

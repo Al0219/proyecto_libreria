@@ -7,18 +7,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="817.0" prefWidth="1250.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.VentasController">
+<AnchorPane id="AnchorPane" prefHeight="817.0" prefWidth="1250.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.VentasController">
     <stylesheets>
         <URL value="@ventas.css" />
     </stylesheets>
    <children>
       <Pane layoutX="10.0" layoutY="15.0" prefHeight="785.0" prefWidth="1224.0">
          <children>
-            <Label layoutX="249.0" layoutY="38.0" prefHeight="55.0" prefWidth="149.0" text="Registros de Ventas">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </Label>
             <Label layoutX="70.0" layoutY="262.0" text="Fecha de Venta" />
             <Label layoutX="72.0" layoutY="333.0" text="Id del Usuario" />
             <Label layoutX="74.0" layoutY="175.0" text="NIT del Cliente" />
@@ -27,8 +22,8 @@
             <TextField fx:id="txtIdUsuario" layoutX="230.0" layoutY="322.0" />
          </children>
       </Pane>
-      <Button fx:id="btnCancelar" layoutX="362.0" layoutY="547.0" mnemonicParsing="false" text="Cancelar" />
-      <TableView layoutX="547.0" layoutY="109.0" prefHeight="469.0" prefWidth="670.0">
+      <Button fx:id="btnCancelar" layoutX="362.0" layoutY="547.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <TableView fx:id="tblVentas" layoutX="547.0" layoutY="109.0" onMouseClicked="#seleccionarModificar" prefHeight="469.0" prefWidth="670.0">
          <columns>
             <TableColumn fx:id="nitNumeroVenta" prefWidth="143.0" text="Numero de Venta" />
             <TableColumn fx:id="nitCliente" prefWidth="123.0" text="NIT Cliente" />
@@ -36,12 +31,12 @@
             <TableColumn fx:id="idUsuario" prefWidth="155.0" text="Id Usuario" />
          </columns>
       </TableView>
-      <Button fx:id="btnModificar" layoutX="359.0" layoutY="455.0" mnemonicParsing="false" text="Modificar" />
-      <Button fx:id="btnGuardar" layoutX="167.0" layoutY="455.0" mnemonicParsing="false" text="Guardar">
+      <Button fx:id="btnModificar" layoutX="359.0" layoutY="455.0" mnemonicParsing="false" onAction="#modificar" text="Modificar" />
+      <Button fx:id="btnGuardar" layoutX="167.0" layoutY="455.0" mnemonicParsing="false" onAction="#insertar" text="Guardar">
          <cursor>
             <Cursor fx:constant="MOVE" />
          </cursor>
       </Button>
-      <Button fx:id="btnAnular" layoutX="172.0" layoutY="547.0" mnemonicParsing="false" text="Anular" />
+      <Button fx:id="btnAnular" layoutX="172.0" layoutY="547.0" mnemonicParsing="false" onAction="#anular" text="Anular" />
    </children>
 </AnchorPane>

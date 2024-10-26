@@ -14,9 +14,9 @@ public class ProveedoresTabla {
     private Integer nitProveedor;
     private String nombreProveedor;
     private String direccionProveedor;
-    private Integer telefonProveedor;
+    private String telefonProveedor;
 
-    public ProveedoresTabla(Integer nitProveedor, String nombreProveedor, String direccionProveedor, Integer telefonProveedor) {
+    public ProveedoresTabla(Integer nitProveedor, String nombreProveedor, String direccionProveedor, String telefonProveedor) {
         this.nitProveedor = nitProveedor;
         this.nombreProveedor = nombreProveedor;
         this.direccionProveedor = direccionProveedor;
@@ -68,14 +68,14 @@ public class ProveedoresTabla {
     /**
      * @return the telefonProveedor
      */
-    public Integer getTelefonProveedor() {
+    public String getTelefonProveedor() {
         return telefonProveedor;
     }
 
     /**
      * @param telefonProveedor the telefonProveedor to set
      */
-    public void setTelefonProveedor(Integer telefonProveedor) {
+    public void setTelefonProveedor(String telefonProveedor) {
         this.telefonProveedor = telefonProveedor;
     }
   

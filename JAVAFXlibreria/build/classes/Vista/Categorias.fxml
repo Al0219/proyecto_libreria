@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="940.0" prefWidth="1301.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.CategoriasController">
+<AnchorPane id="AnchorPane" prefHeight="940.0" prefWidth="1301.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.CategoriasController">
     <stylesheets>
         <URL value="@categorias.css" />
     </stylesheets>
@@ -25,6 +25,6 @@
       </TableView>
       <Button fx:id="btnGuardar" layoutX="127.0" layoutY="234.0" mnemonicParsing="false" onAction="#insertar" text="Guardar categoria" />
       <Button fx:id="btnActualizar" layoutX="560.0" layoutY="234.0" mnemonicParsing="false" onAction="#modificar" text="Actualizar categoria" />
-      <Button fx:id="btnCancelar" layoutX="1084.0" layoutY="234.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button fx:id="btnCancelar" layoutX="1010.0" layoutY="234.0" mnemonicParsing="false" onAction="#cancelar" text="Regresar al menú" />
    </children>
 </AnchorPane>

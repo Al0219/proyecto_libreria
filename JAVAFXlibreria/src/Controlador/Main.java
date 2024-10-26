@@ -25,9 +25,12 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage ){
         try{
+            Stage stage = new Stage();
+            stage.setFullScreen(true);
             Parent root=FXMLLoader.load(getClass().getResource("/Vista/Productos.fxml"));
             primaryStage.setTitle("Menu");
             primaryStage.setScene(new Scene(root));
+            primaryStage.isFullScreen();
             primaryStage.show();
         }catch (IOException e){
             System.out.println("error="+e);

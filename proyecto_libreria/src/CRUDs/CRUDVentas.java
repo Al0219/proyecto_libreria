@@ -29,8 +29,8 @@ public class CRUDVentas {
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(Ventas.class);
-            criteria.createAlias("Clientes","c");
-            criteria.createAlias("Usuarios","u");
+            criteria.createAlias("clientes","c");
+            criteria.createAlias("usuarios","u");
             criteria.add(Restrictions.eq("estadoVenta",true));
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("numeroVenta"))

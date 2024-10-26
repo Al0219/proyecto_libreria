@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,8 +8,45 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="741.0" prefWidth="1255.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.MenuPrincipalController">
     <stylesheets>
-        <URL value="@menuprincipal.css"/>
+        <URL value="@menuprincipal.css" />
     </stylesheets>
+   <children>
+      <Button fx:id="btnUsuarios" layoutX="106.0" layoutY="114.0" mnemonicParsing="false" onAction="#abrirUsuarios" text="Ir a Usuarios">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnClientes" layoutX="266.0" layoutY="412.0" mnemonicParsing="false" onAction="#abrirClientes" text="Ir a Clientes">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnProveedores" layoutX="477.0" layoutY="114.0" mnemonicParsing="false" onAction="#abrirProveedores" text="Ir a Proveedores">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCategorias" layoutX="738.0" layoutY="393.0" mnemonicParsing="false" onAction="#abrirCategorias" text="Ir a Categorías">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnProductos" layoutX="969.0" layoutY="114.0" mnemonicParsing="false" onAction="#abrirProductos" text="Ir a Productos">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCompras" layoutX="106.0" layoutY="203.0" mnemonicParsing="false" text="Registar una Compra">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnVentas" layoutX="450.0" layoutY="203.0" mnemonicParsing="false" onAction="#abrirVentas" text="Registrar una Venta">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

@@ -5,6 +5,9 @@
  */
 package Modelo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author 20041
@@ -13,9 +16,17 @@ public class VentasTabla {
     
     private Integer numeroVenta;
     private Integer nitCliente;
-    private String fechaVenta;
+    private Date fechaVenta;
     private Integer idUsuario;
 
+    public VentasTabla(Integer numeroVenta, Integer nitCliente, Date fechaVenta, Integer idUsuario) {
+        this.numeroVenta = numeroVenta;
+        this.nitCliente = nitCliente;
+        this.fechaVenta = fechaVenta;
+        this.idUsuario = idUsuario;
+    }
+
+    
     /**
      * @return the numeroVenta
      */
@@ -47,14 +58,14 @@ public class VentasTabla {
     /**
      * @return the fechaVenta
      */
-    public String getFechaVenta() {
+    public Date getFechaVenta() {
         return fechaVenta;
     }
 
     /**
      * @param fechaVenta the fechaVenta to set
      */
-    public void setFechaVenta(String fechaVenta) {
+    public void setFechaVenta(String fechaVenta1) {
         this.fechaVenta = fechaVenta;
     }
 

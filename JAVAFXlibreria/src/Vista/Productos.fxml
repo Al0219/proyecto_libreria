@@ -37,6 +37,6 @@
       </TableView>
       <Button fx:id="btnGuardar" layoutX="967.0" layoutY="84.0" mnemonicParsing="false" onAction="#insertar" text="Guardar producto" />
       <Button fx:id="btnActualizar" layoutX="961.0" layoutY="187.0" mnemonicParsing="false" onAction="#modificar" text="Actualizar producto" />
-      <Button fx:id="btnCancelar" layoutX="1005.0" layoutY="290.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button fx:id="btnCancelar" layoutX="970.0" layoutY="290.0" mnemonicParsing="false" onAction="#cancelar" text="Regresar al menú" />
    </children>
 </AnchorPane>

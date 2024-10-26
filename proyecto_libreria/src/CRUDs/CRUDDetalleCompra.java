@@ -28,8 +28,8 @@ public class CRUDDetalleCompra {
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(DetalleCompra.class);
-            criteria.createAlias("Compras", "c");
-            criteria.createAlias("Productos","p");
+            criteria.createAlias("compras", "c");
+            criteria.createAlias("productos","p");
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("numeroDocumento"))
             .add(Projections.property("p.numeroCompra"))

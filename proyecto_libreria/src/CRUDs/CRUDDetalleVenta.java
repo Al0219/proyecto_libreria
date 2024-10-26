@@ -27,8 +27,8 @@ public class CRUDDetalleVenta {
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(DetalleVenta.class);
-            criteria.createAlias("Ventas", "c");
-            criteria.createAlias("Productos","p");
+            criteria.createAlias("ventas", "c");
+            criteria.createAlias("productos","p");
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("numeroDocumento"))
             .add(Projections.property("p.numeroVenta"))

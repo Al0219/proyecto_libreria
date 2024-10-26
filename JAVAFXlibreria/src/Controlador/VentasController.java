@@ -7,8 +7,13 @@ package Controlador;
 
 import Modelo.UsuariosTabla;
 import Modelo.VentasTabla;
+import POJOs.Clientes;
+import POJOs.Usuarios;
+import static java.awt.SystemColor.window;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -54,7 +59,7 @@ public class VentasController implements Initializable {
     private TableColumn<?, ?> idUsuario;
     
     @FXML
-    private TableView<VentasTabla> tblVenras;
+    private TableView<VentasTabla> tblVentas;
     private Integer numeroVentass;
     private ObservableList<VentasTabla> listaVentas;
     
@@ -71,6 +76,7 @@ public class VentasController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        modificar();
         // TODO
     }    
     
@@ -78,19 +84,19 @@ public class VentasController implements Initializable {
         listaVentas = FXCollections.observableArrayList();
         for (Iterator it = CRUDs.CRUDVentas.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
-            listaVentas.add(new VentasTabla((Integer)item[0],(Integer)item[1],(String)item[2], (Integer)item[3]));
+            listaVentas.add(new VentasTabla((Integer)item[0],(Integer)item[1],(Date)item[2], (Integer)item[3]));
         }
         this.nitNumeroVenta.setCellValueFactory(new PropertyValueFactory("nitNumeroVenta"));
         this.nitCliente.setCellValueFactory(new PropertyValueFactory("nitCliente"));
         this.fechaVenta.setCellValueFactory(new PropertyValueFactory("fechaCliente"));
         this.idUsuario.setCellValueFactory(new PropertyValueFactory("idUsuario"));
-        tblVenras.setItems(listaVentas);
+        tblVentas.setItems(listaVentas);
     }
 
     @FXML
     private void seleccionarModificar(javafx.scene.input.MouseEvent event){
-        VentasTabla p = this.tblVenras.getSelectionModel().getSelectedItem();
-        txtFechaVenta.setText(p.getFechaVenta());
+        VentasTabla p = this.tblVentas.getSelectionModel().getSelectedItem();
+        txtFechaVenta.setText(String.valueOf(p.getFechaVenta()));
         txtNitCliente.setText(p.getNitCliente()+"");
         txtIdUsuario.setText(p.getIdUsuario()+"");
         numeroVentass= p.getNumeroVenta();
@@ -109,12 +115,14 @@ public class VentasController implements Initializable {
     @FXML
     private void insertar() {
         try{
-        String fecha;
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy");
+        String fechaVenta;
         Integer nitCliente, idUsuario;
-        fecha = txtFechaVenta.getText();
+        fechaVenta = txtFechaVenta.getText();
         nitCliente = Integer.parseInt(txtNitCliente.getText());
         idUsuario = Integer.parseInt(txtIdUsuario.getText());
-        if(CRUDs.CRUDVentas.crear(fecha, nitCliente, idUsuario)){
+        Date fecha = formato.parse(txtFechaVenta.getText());
+        if(CRUDs.CRUDVentas.crear(idUsuario, nitCliente, fecha)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro ingresado");
@@ -141,12 +149,16 @@ public class VentasController implements Initializable {
     @FXML
     private void modificar() {
         try{
-        String fecha;
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy");
+        String fechaVenta;
         Integer nitCliente, idUsuario;
-        fecha = txtFechaVenta.getText();
-        nitCliente = Integer.parseInt(txtNitCliente.getText());
-        idUsuario = Integer.parseInt(txtIdUsuario.getText());
-        if(CRUDs.CRUDVentas.actualizar(getNumeroVentassss(), fecha, nitCliente, idUsuario)){
+        Date fecha = formato.parse(txtFechaVenta.getText());
+        Clientes cliente = new Clientes();
+        cliente.setNitCliente(Integer.parseInt(txtNitCliente.getText()));
+        Usuarios usuario = new Usuarios();
+        usuario.setIdUsuario(Integer.parseInt(txtIdUsuario.getText()));
+        
+        if(CRUDs.CRUDVentas.actualizar(getNumeroVentassss(), fecha, cliente, usuario)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro modificado");
@@ -209,15 +221,16 @@ public class VentasController implements Initializable {
     }
 
     @FXML
-    private void cancelar(ActionEvent event) {
+    private void cancelar(ActionEvent event) throws InterruptedException {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/MenuPrincipal.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle("MenuPrincipal");
-            
+            window.wait();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(VentasController.class.getName()).log(Level.SEVERE, null, ex);
@@ -244,6 +257,7 @@ public class VentasController implements Initializable {
     public Integer getNumeroVentassss() {
         return numeroVentass;
     }
+
     
     
 }

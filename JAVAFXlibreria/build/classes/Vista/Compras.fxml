@@ -7,11 +7,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="807.0" prefWidth="1655.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.ComprasController">
+<AnchorPane id="AnchorPane" prefHeight="807.0" prefWidth="1655.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ComprasController">
     <stylesheets>
         <URL value="@compras.css" />
     </stylesheets>
    <children>
-      <Label layoutX="78.0" layoutY="85.0" text="Label" />
+      <Label layoutX="89.0" layoutY="85.0" text="NIT del Proveedor" />
+      <Label layoutX="89.0" layoutY="140.0" text="ID Usuario" />
+      <Label layoutX="89.0" layoutY="192.0" text="Fecha de compra" />
+      <TextField layoutX="272.0" layoutY="79.0" />
+      <TextField layoutX="272.0" layoutY="134.0" />
+      <TextField layoutX="272.0" layoutY="186.0" />
+      <TableView layoutX="89.0" layoutY="250.0" prefHeight="467.0" prefWidth="1476.0">
+        <columns>
+          <TableColumn prefWidth="228.0" text="Estado de la compra" />
+          <TableColumn prefWidth="289.0" text="Numero de compra" />
+            <TableColumn prefWidth="510.0" text="NIT Proveedor" />
+            <TableColumn prefWidth="274.0" text="Fecha de compra" />
+            <TableColumn prefWidth="174.0" text="ID Usuario" />
+        </columns>
+      </TableView>
+      <Button layoutX="781.0" layoutY="79.0" mnemonicParsing="false" text="Nueva Compra" />
    </children>
 </AnchorPane>

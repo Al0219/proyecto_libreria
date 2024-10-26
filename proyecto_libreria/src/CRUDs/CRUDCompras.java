@@ -28,8 +28,8 @@ public class CRUDCompras {
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(Compras.class);
-            criteria.createAlias("Proveedores","p");
-            criteria.createAlias("Usuarios","u");
+            criteria.createAlias("proveedores","p");
+            criteria.createAlias("usuarios","u");
             criteria.add(Restrictions.eq("estadoCompra",true));
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("numeroCompra"))
