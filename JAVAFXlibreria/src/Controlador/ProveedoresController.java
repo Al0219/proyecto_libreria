@@ -57,7 +57,6 @@ public class ProveedoresController implements Initializable {
     @FXML
     private TableColumn<?, ?> telefonoProveedor;
     
-    @FXML
     private TableView<ProveedoresTabla> tblProveedores;
     private Integer nitProvedoress;
     private ObservableList<ProveedoresTabla> listaProveedores;
@@ -87,7 +86,6 @@ public class ProveedoresController implements Initializable {
         this.telefonoProveedor.setCellValueFactory(new PropertyValueFactory("telefonoProveedor"));
         tblProveedores.setItems(listaProveedores);
     }
-    @FXML
     private void seleccionarModificar(javafx.scene.input.MouseEvent event){
         ProveedoresTabla p = this.tblProveedores.getSelectionModel().getSelectedItem();
         txtNombre.setText(p.getNombreProveedor());
@@ -106,7 +104,6 @@ public class ProveedoresController implements Initializable {
         txtTelefono.setText("");
     }
     
-    @FXML
     private void insertar() {
         try{
         String nombre, direccion;
@@ -138,7 +135,6 @@ public class ProveedoresController implements Initializable {
         }
     }
 
-    @FXML
     private void modificar() {
         try{
         String nombre, direccion;
@@ -179,7 +175,6 @@ public class ProveedoresController implements Initializable {
         }
     }
 
-    @FXML
     private void anular() {
         try{
         if(CRUDs.CRUDProveedores.anular(getNitProveedor())){
@@ -213,7 +208,6 @@ public class ProveedoresController implements Initializable {
         }
     }
     
-    @FXML
     private void cancelar(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/MenuPrincipal.fxml"));
