@@ -57,7 +57,6 @@ public class ProductosController implements Initializable {
     private ObservableList<ProductosTabla> listaProductos;
     @FXML
     private TableColumn<?, ?> id;
-    @FXML
     private TableColumn<?, ?> nombre;
     @FXML
     private TableColumn<?, ?> descripcion;
@@ -75,6 +74,8 @@ public class ProductosController implements Initializable {
     private Button btnActualizar;
     @FXML
     private Button btnCancelar;
+    @FXML
+    private TableColumn<?, ?> idCategoria;
 
     /**
      * Initializes the controller class.
@@ -85,7 +86,6 @@ public class ProductosController implements Initializable {
         // TODO
     }    
     
-    @FXML
     public void mostrar(){
         listaProductos = FXCollections.observableArrayList();
         for (Iterator it = CRUDs.CRUDProductos.universo().iterator(); it.hasNext();){
@@ -110,8 +110,7 @@ public class ProductosController implements Initializable {
         txtExistencia.setText(""+p.getExistencia());
         txtPrecioVenta.setText(""+p.getPrecioVenta());
         txtPrecioCosto.setText(""+p.getPrecioCosto());
-        txtCategoria.setText(p.getCategorias()+"");
-        
+        txtCategoria.setText(p.getIdCategoria()+"");
         idProductosV = p.getIdProducto();
     }
 
@@ -126,16 +125,16 @@ public class ProductosController implements Initializable {
     @FXML
     private void insertar(ActionEvent event) {
         try{
-        Integer idCat; 
+        Integer cat;
         String nombre, descripcion;
         Float existencia,precioVenta, precioCosto;
+        cat = Integer.parseInt(txtCategoria.getText());
         nombre = txtNombre.getText();
         descripcion = txtDescripcion.getText();
         existencia = Float.parseFloat(txtExistencia.getText());
         precioVenta = Float.parseFloat(txtPrecioVenta.getText());
         precioCosto = Float.parseFloat(txtPrecioCosto.getText());
-        idCat = Integer.parseInt(txtCategoria.getText());
-        if(CRUDs.CRUDProductos.crear(idCat, nombre, descripcion, existencia, precioVenta, precioCosto)){
+        if(CRUDs.CRUDProductos.crear(cat, nombre, descripcion, existencia, precioVenta, precioCosto)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro ingresado");
@@ -162,7 +161,7 @@ public class ProductosController implements Initializable {
     @FXML
     private void modificar(ActionEvent event) {
         try{
-        Integer idCat;
+        Integer cat;
         String nombre, descripcion;
         Float existencia,precioVenta, precioCosto;
         nombre = txtNombre.getText();
@@ -170,8 +169,8 @@ public class ProductosController implements Initializable {
         existencia = Float.parseFloat(txtExistencia.getText());
         precioVenta = Float.parseFloat(txtPrecioVenta.getText());
         precioCosto = Float.parseFloat(txtPrecioCosto.getText());
-        idCat = Integer.parseInt(txtCategoria.getText());
-        if(CRUDs.CRUDProductos.actualizar(getIdProductosV(), idCat, nombre, descripcion, existencia, precioVenta, precioCosto)){
+        cat = Integer.parseInt(txtCategoria.getText());
+        if(CRUDs.CRUDProductos.actualizar(getIdProductosV(), cat, nombre, descripcion, existencia, precioVenta, precioCosto)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro modificado");
@@ -214,7 +213,6 @@ public class ProductosController implements Initializable {
             Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    @FXML
     private void navegarCampos(TextField campoAnterior, TextField campoSiguiente){
         campoAnterior.setOnKeyPressed(event ->{
             switch(event.getCode()){
@@ -226,7 +224,6 @@ public class ProductosController implements Initializable {
             }
         });
     }
-    @FXML
     public Integer getIdProductosV() {
         return idProductosV;
     }

@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -21,13 +22,14 @@ public class Main extends Application{
     /**
      * @param args the command line arguments
      */
+    @Override
     public void start(Stage primaryStage ){
         try{
             Parent root=FXMLLoader.load(getClass().getResource("/Vista/Productos.fxml"));
             primaryStage.setTitle("Menu");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
-        }catch (Exception e){
+        }catch (IOException e){
             System.out.println("error="+e);
         }
         

@@ -14,6 +14,7 @@ import POJOs.Categorias;
 public class ProductosTabla {
      private Integer idProducto;
      private Categorias categorias;
+     private Integer idCategoria;
      private String nombreProducto;
      private String descripcionProducto;
      private float existencia;
@@ -126,6 +127,20 @@ public class ProductosTabla {
      */
     public void setPrecioVenta(float precioVenta) {
         this.precioVenta = precioVenta;
+    }
+
+    /**
+     * @return the idCategoria
+     */
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    /**
+     * @param idCategoria the idCategoria to set
+     */
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
      
 }
