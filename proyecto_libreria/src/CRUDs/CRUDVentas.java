@@ -78,6 +78,33 @@ public class CRUDVentas {
         return flag;
     }
     
+    
+    public static boolean actualizar(Integer numeroVenta, Date fecha, Clientes clientes, Usuarios usuarios){
+        boolean flag = false;
+        Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
+        Criteria criteria = session.createCriteria(Ventas.class);
+        criteria.add(Restrictions.eq("numeroVenta", numeroVenta));
+        Ventas insert = (Ventas)criteria.uniqueResult();
+        Transaction transaction=null;
+        try{
+           transaction = session.beginTransaction();
+           if(insert != null){
+               insert.setFechaVenta(fecha);
+               insert.setClientes(clientes);
+               insert.setUsuarios(usuarios);
+               session.update(insert);
+               flag=true;
+           }
+            transaction.commit();
+        }catch(Exception e){
+            transaction.rollback();
+        }finally{
+            session.close();
+        }
+        return flag;
+    }
+    
+    
     public static boolean anular(Integer numeroVenta){
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="826.0" prefWidth="1290.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.ProveedoresController">
+<AnchorPane id="AnchorPane" prefHeight="826.0" prefWidth="1290.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ProveedoresController">
     <stylesheets>
         <URL value="@proveedores.css" />
     </stylesheets>
