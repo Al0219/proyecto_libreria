@@ -7,8 +7,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ClientesController">
+<AnchorPane id="AnchorPane" prefHeight="793.0" prefWidth="1221.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.ClientesController">
     <stylesheets>
-        <URL value="@clientes.css"/>
+        <URL value="@clientes.css" />
     </stylesheets>
+   <children>
+      <Pane layoutX="12.0" layoutY="14.0" prefHeight="766.0" prefWidth="1197.0" />
+      <Label layoutX="176.0" layoutY="42.0" prefHeight="55.0" prefWidth="176.0" text="Registros de los Clientes">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Label>
+      <TextField fx:id="txtNombre" layoutX="203.0" layoutY="172.0" />
+      <TextField fx:id="txtDireccion" layoutX="213.0" layoutY="257.0" />
+      <Label layoutX="95.0" layoutY="262.0" text="Direccion" />
+      <Label layoutX="99.0" layoutY="187.0" text="Nombre" />
+      <Button fx:id="btnCancelar" layoutX="342.0" layoutY="527.0" mnemonicParsing="false" text="Cancelar" />
+      <TableView layoutX="527.0" layoutY="89.0" prefHeight="469.0" prefWidth="670.0">
+         <columns>
+            <TableColumn fx:id="nitPersona" prefWidth="118.0" text="Nit " />
+            <TableColumn fx:id="nombreCliente" prefWidth="148.0" text="Nombre Cliente" />
+            <TableColumn fx:id="direccionCliente" prefWidth="204.0" text="Direccion" />
+            <TableColumn fx:id="telefonoCliente" prefWidth="192.0" text="Telefono" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtTelefono" layoutX="223.0" layoutY="334.0" />
+      <Label layoutX="108.0" layoutY="339.0" text="Telefono" />
+      <Button fx:id="btnModificar" layoutX="339.0" layoutY="435.0" mnemonicParsing="false" text="Modificar" />
+      <Button fx:id="btnGuardar" layoutX="147.0" layoutY="435.0" mnemonicParsing="false" text="Guardar">
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnAnular" layoutX="152.0" layoutY="527.0" mnemonicParsing="false" text="Anular" />
+   </children>
 </AnchorPane>
