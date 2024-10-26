@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -57,7 +58,6 @@ public class MenuPrincipalController implements Initializable {
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
@@ -75,7 +75,6 @@ public class MenuPrincipalController implements Initializable {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.close();
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
@@ -92,7 +91,6 @@ public class MenuPrincipalController implements Initializable {
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
@@ -110,7 +108,6 @@ public class MenuPrincipalController implements Initializable {
             Scene scene = new Scene(root);
             
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
             
         } catch (IOException ex) {
@@ -128,7 +125,6 @@ public class MenuPrincipalController implements Initializable {
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
@@ -144,7 +140,6 @@ public class MenuPrincipalController implements Initializable {
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
@@ -159,28 +154,26 @@ public class MenuPrincipalController implements Initializable {
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    @FXML
     public void abrirVentas(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/DetalleVentas.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/DetalleVenta.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle("DetalleVentas");
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    @FXML
     public void abrirDetalleVenta(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/DetalleVenta.fxml"));
@@ -190,11 +183,11 @@ public class MenuPrincipalController implements Initializable {
             
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -8,47 +9,47 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="741.0" prefWidth="1255.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="1242.0" prefWidth="2002.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
     <stylesheets>
         <URL value="@menuprincipal.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnUsuarios" defaultButton="true" layoutX="472.0" layoutY="411.0" mnemonicParsing="false" onAction="#abrirUsuarios" text="Ir a Usuarios" textFill="#e10a87">
+      <Button fx:id="btnUsuarios" defaultButton="true" layoutX="297.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirUsuarios" text="Ir a Usuarios" textFill="#e10a87">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnClientes" defaultButton="true" layoutX="1037.0" layoutY="411.0" mnemonicParsing="false" onAction="#abrirClientes" text="Ir a Clientes" textFill="#d01aa3">
+      <Button fx:id="btnClientes" defaultButton="true" layoutX="841.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirClientes" text="Ir a Clientes" textFill="#d01aa3">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnProveedores" defaultButton="true" layoutX="740.0" layoutY="411.0" mnemonicParsing="false" onAction="#abrirProveedores" text="Ir a Proveedores" textFill="#cd199a">
+      <Button fx:id="btnProveedores" defaultButton="true" layoutX="545.0" layoutY="297.0" mnemonicParsing="false" onAction="#abrirProveedores" text="Ir a Proveedores" textFill="#cd199a">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnCategorias" defaultButton="true" layoutX="560.0" layoutY="502.0" mnemonicParsing="false" onAction="#abrirCategorias" text="Ir a Categorías" textFill="#c60997">
+      <Button fx:id="btnCategorias" defaultButton="true" layoutX="386.0" layoutY="412.0" mnemonicParsing="false" onAction="#abrirCategorias" text="Ir a Categorías" textFill="#c60997">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnProductos" defaultButton="true" layoutX="938.0" layoutY="502.0" mnemonicParsing="false" onAction="#abrirProductos" text="Ir a Productos" textFill="#e814b3">
+      <Button fx:id="btnProductos" defaultButton="true" layoutX="729.0" layoutY="412.0" mnemonicParsing="false" onAction="#abrirProductos" text="Ir a Productos" textFill="#e814b3">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnCompras" defaultButton="true" layoutX="516.0" layoutY="613.0" mnemonicParsing="false" onAction="#abrirCompras" text="Registar una Compra" textFill="#e11dba">
+      <Button fx:id="btnCompras" defaultButton="true" layoutX="342.0" layoutY="536.0" mnemonicParsing="false" onAction="#abrirCompras" text="Registar una Compra" textFill="#e11dba">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnVentas" defaultButton="true" layoutX="914.0" layoutY="613.0" mnemonicParsing="false" onAction="#abrirVentas" text="Registrar una Venta" textFill="#bc1b7e">
+      <Button fx:id="btnVentas" defaultButton="true" layoutX="744.0" layoutY="536.0" mnemonicParsing="false" onAction="#abrirDetalleVenta" text="Registrar una Venta" textFill="#bc1b7e">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Label layoutX="643.0" layoutY="321.0" prefHeight="73.0" prefWidth="477.0" text="Libreria el Programador." textFill="#d00e0e">
+      <Label layoutX="417.0" layoutY="198.0" prefHeight="73.0" prefWidth="477.0" text="Libreria el Programador." textFill="#d00e0e">
          <font>
             <Font size="42.0" />
          </font>
