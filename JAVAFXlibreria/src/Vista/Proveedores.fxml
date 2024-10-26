@@ -7,8 +7,41 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ProveedoresController">
+<AnchorPane id="AnchorPane" prefHeight="826.0" prefWidth="1290.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.ProveedoresController">
     <stylesheets>
-        <URL value="@proveedores.css"/>
+        <URL value="@proveedores.css" />
     </stylesheets>
+   <children>
+      <Pane layoutX="14.0" layoutY="12.0" prefHeight="789.0" prefWidth="1249.0">
+         <children>
+            <Label layoutX="91.0" layoutY="331.0" text="Telefono" />
+            <TextField fx:id="txtTelefono" layoutX="209.0" layoutY="326.0" />
+            <TextField fx:id="txtDireccion" layoutX="209.0" layoutY="253.0" />
+            <TextField fx:id="txtNombre" layoutX="209.0" layoutY="174.0" />
+         </children>
+      </Pane>
+      <Button fx:id="btnAnular" layoutX="162.0" layoutY="537.0" mnemonicParsing="false" text="Anular" />
+      <Button fx:id="btnGuardar" layoutX="157.0" layoutY="445.0" mnemonicParsing="false" text="Guardar">
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnModificar" layoutX="349.0" layoutY="445.0" mnemonicParsing="false" text="Modificar" />
+      <TableView layoutX="537.0" layoutY="99.0" prefHeight="469.0" prefWidth="670.0">
+         <columns>
+            <TableColumn fx:id="nitProveedor" prefWidth="118.0" text="Nit " />
+            <TableColumn fx:id="nombreProveedor" prefWidth="148.0" text="Nombre Proveedor" />
+            <TableColumn fx:id="direccionProveedor" prefWidth="204.0" text="Direccion" />
+            <TableColumn fx:id="telefonoProveedor" prefWidth="192.0" text="Telefono" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnCancelar" layoutX="352.0" layoutY="537.0" mnemonicParsing="false" text="Cancelar" />
+      <Label layoutX="109.0" layoutY="197.0" text="Nombre" />
+      <Label layoutX="105.0" layoutY="272.0" text="Direccion" />
+      <Label layoutX="186.0" layoutY="52.0" prefHeight="55.0" prefWidth="205.0" text="Registros de los Proveedores">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Label>
+   </children>
 </AnchorPane>
