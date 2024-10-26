@@ -19,7 +19,10 @@ public class proyecto_libreria {
      */
     public static void main(String[] args) {
         Float cantidad = 1f, existencia=5f, precioV=468f, precioC=135f;
-        System.out.println("insertar"+CRUDs.CRUDDetalleCompra.crear(1,1,1, cantidad,precioC));
+        Integer nDoc= 1, nVenta= 1, id= 1
+                ;
+        
+        //System.out.println("insertar"+CRUDs.CRUDDetalleVenta.crear(nDoc,nVenta, id, cantidad));
         
         /*for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
