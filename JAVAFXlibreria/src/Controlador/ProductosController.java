@@ -5,8 +5,9 @@
  */
 package Controlador;
 
-import Modelo.CategoriasTabla;
+
 import Modelo.ProductosTabla;
+import POJOs.Productos;
 import POJOs.Categorias;
 import java.io.IOException;
 import java.net.URL;
@@ -125,15 +126,16 @@ public class ProductosController implements Initializable {
     @FXML
     private void insertar(ActionEvent event) {
         try{
-        String nombre, descripcion,categoria;
+        Integer idCat; 
+        String nombre, descripcion;
         Float existencia,precioVenta, precioCosto;
         nombre = txtNombre.getText();
         descripcion = txtDescripcion.getText();
         existencia = Float.parseFloat(txtExistencia.getText());
         precioVenta = Float.parseFloat(txtPrecioVenta.getText());
         precioCosto = Float.parseFloat(txtPrecioCosto.getText());
-        categoria = txtCategoria.getText();
-        if(CRUDs.CRUDCategorias.crear(nombre, descripcion)){
+        idCat = Integer.parseInt(txtCategoria.getText());
+        if(CRUDs.CRUDProductos.crear(idCat, nombre, descripcion, existencia, precioVenta, precioCosto)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro ingresado");
@@ -160,15 +162,16 @@ public class ProductosController implements Initializable {
     @FXML
     private void modificar(ActionEvent event) {
         try{
-        String nombre, descripcion,categoria;
+        Integer idCat;
+        String nombre, descripcion;
         Float existencia,precioVenta, precioCosto;
         nombre = txtNombre.getText();
         descripcion = txtDescripcion.getText();
         existencia = Float.parseFloat(txtExistencia.getText());
         precioVenta = Float.parseFloat(txtPrecioVenta.getText());
         precioCosto = Float.parseFloat(txtPrecioCosto.getText());
-        categoria = txtCategoria.getText();
-        if(CRUDs.CRUDCategorias.actualizar(getIdProductosV(), nombre, descripcion)){
+        idCat = Integer.parseInt(txtCategoria.getText());
+        if(CRUDs.CRUDProductos.actualizar(getIdProductosV(), idCat, nombre, descripcion, existencia, precioVenta, precioCosto)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro modificado");

@@ -19,16 +19,17 @@ import org.hibernate.criterion.Restrictions;
  * @author 20041
  */
 public class CRUDProductos {
+    Categorias Categorias= new Categorias();
     public static List<Productos>universo(){
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         List<Productos> lista=null;
         try{
             session.beginTransaction();
             Criteria criteria = session.createCriteria(Productos.class);
-            criteria.createAlias("Productos","p");
+            criteria.createAlias("Categorias","c");
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("idProducto"))
-            .add(Projections.property("p.nombreCategoria"))
+            .add(Projections.property("c.idCategoria"))
             .add(Projections.property("nombreProducto"))
             .add(Projections.property("descripcionProducto"))
             .add(Projections.property("existencia"))
@@ -45,7 +46,7 @@ public class CRUDProductos {
         return lista;
     }
 
-    public static boolean crear(String nombreCategoria, String nombreProducto, String descripcionProducto, Float existencia, Float precioCosto, Float precioVenta){
+    public static boolean crear(Integer idCategoria, String nombreProducto, String descripcionProducto, Float existencia, Float precioCosto, Float precioVenta){
         boolean flag = false;
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Productos.class);
@@ -57,7 +58,7 @@ public class CRUDProductos {
            if(insert ==null){
                insert=new Productos();
                Categorias Categorias= new Categorias();
-               Categorias.setNombreCategoria(nombreCategoria);
+               Categorias.setIdCategoria(idCategoria);
                insert.setCategorias(Categorias);
                insert.setNombreProducto(nombreProducto);
                insert.setDescripcionProducto(descripcionProducto);

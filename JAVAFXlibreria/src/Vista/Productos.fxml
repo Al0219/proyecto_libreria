@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="859.0" prefWidth="1253.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.ProductosController">
+<AnchorPane id="AnchorPane" prefHeight="859.0" prefWidth="1253.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ProductosController">
     <stylesheets>
         <URL value="@productos.css" />
     </stylesheets>
@@ -27,7 +27,7 @@
       <TableView fx:id="tblProductos" layoutX="83.0" layoutY="398.0" onMouseClicked="#seleccionarModificar" prefHeight="370.0" prefWidth="1064.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="66.0" text="ID" />
-          <TableColumn fx:id="nombre" prefWidth="185.0" text="Nombre" />
+          <TableColumn fx:id="idCategoria" prefWidth="185.0" text="Nombre" />
             <TableColumn fx:id="descripcion" prefWidth="278.0" text="Descripcion" />
             <TableColumn fx:id="categoria" prefWidth="194.0" text="Categoría" />
             <TableColumn fx:id="existencia" prefWidth="96.0" text="Existencia" />
