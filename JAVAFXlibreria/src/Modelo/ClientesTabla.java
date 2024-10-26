@@ -11,33 +11,34 @@ package Modelo;
  */
 public class ClientesTabla {
     
-    private Integer nitPersona;
-    private String nombreCliente;
-    private String direccionCliente;
-    private Integer telefonCliente;
+    private Integer nitCliente;
+     private boolean estadoCliente;
+     private String nombreCliente;
+     private String direccionCliente;
+     private String telefonoCliente;
 
-    public ClientesTabla(Integer nitPersona, String nombreCliente, String direccionCliente, Integer telefonCliente) {
-        this.nitPersona = nitPersona;
+    public ClientesTabla(Integer nitCliente, String nombreCliente, String direccionCliente, String telefonoCliente) {
+        this.nitCliente = nitCliente;
         this.nombreCliente = nombreCliente;
         this.direccionCliente = direccionCliente;
-        this.telefonCliente = telefonCliente;
+        this.telefonoCliente = telefonoCliente;
     }
     
     
     
 
     /**
-     * @return the nitPersona
+     * @return the nitCliente
      */
-    public Integer getNitPersona() {
-        return nitPersona;
+    public Integer getNitCliente() {
+        return nitCliente;
     }
 
     /**
-     * @param nitPersona the nitPersona to set
+     * @param nitCliente the nitCliente to set
      */
-    public void setNitPersona(Integer nitPersona) {
-        this.nitPersona = nitPersona;
+    public void setNitCliente(Integer nitCliente) {
+        this.nitCliente = nitCliente;
     }
 
     /**
@@ -71,15 +72,15 @@ public class ClientesTabla {
     /**
      * @return the telefonCliente
      */
-    public Integer getTelefonCliente() {
-        return telefonCliente;
+    public String getTelefonoCliente() {
+        return telefonoCliente;
     }
 
     /**
      * @param telefonCliente the telefonCliente to set
      */
-    public void setTelefonCliente(Integer telefonCliente) {
-        this.telefonCliente = telefonCliente;
+    public void setTelefonoCliente(Integer telefonCliente) {
+        this.telefonoCliente = telefonoCliente;
     }
     
 }

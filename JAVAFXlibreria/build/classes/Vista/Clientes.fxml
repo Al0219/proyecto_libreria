@@ -7,8 +7,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ClientesController">
+<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="1221.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ClientesController">
     <stylesheets>
-        <URL value="@clientes.css"/>
+        <URL value="@clientes.css" />
     </stylesheets>
+   <children>
+      <Pane layoutX="-3.0" prefHeight="645.0" prefWidth="1221.0">
+         <children>
+            <Label layoutX="62.0" layoutY="101.0" text="Nombre" />
+            <TextField fx:id="txtNombre" layoutX="167.0" layoutY="95.0" prefHeight="39.0" prefWidth="281.0" />
+            <Label layoutX="62.0" layoutY="172.0" text="Direccion" />
+            <Label layoutX="60.0" layoutY="235.0" text="Telefono" />
+            <TextField fx:id="txtDireccion" layoutX="167.0" layoutY="166.0" prefHeight="39.0" prefWidth="281.0" />
+            <TextField fx:id="txtTelefono" layoutX="167.0" layoutY="229.0" prefHeight="39.0" prefWidth="281.0" />
+            <Button fx:id="btnGuardar" layoutX="63.0" layoutY="319.0" mnemonicParsing="false" onAction="#insertar" text="Guardar cliente">
+               <cursor>
+                  <Cursor fx:constant="MOVE" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnModificar" layoutX="289.0" layoutY="319.0" mnemonicParsing="false" onAction="#modificar" text="Actualizar cliente" />
+            <Button fx:id="btnAnular" layoutX="64.0" layoutY="406.0" mnemonicParsing="false" onAction="#anular" text="Eliminar cliente" />
+            <Button fx:id="btnCancelar" layoutX="312.0" layoutY="414.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+         </children></Pane>
+      <TableView fx:id="tblClientes" layoutX="527.0" layoutY="89.0" onMouseClicked="#seleccionarModificar" prefHeight="469.0" prefWidth="619.0">
+         <columns>
+            <TableColumn fx:id="nitPersona" prefWidth="118.0" text="Nit " />
+            <TableColumn fx:id="nombreCliente" prefWidth="148.0" text="Nombre Cliente" />
+            <TableColumn fx:id="direccionCliente" prefWidth="204.0" text="Direccion" />
+            <TableColumn fx:id="telefonoCliente" prefWidth="148.0" text="Telefono" />
+         </columns>
+      </TableView>
+   </children>
 </AnchorPane>
