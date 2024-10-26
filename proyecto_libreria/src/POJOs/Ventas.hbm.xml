@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 25/10/2024 02:38:30 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 25/10/2024 09:33:04 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="POJOs.Ventas" table="ventas" catalog="libreria" optimistic-lock="version">
         <id name="numeroVenta" type="java.lang.Integer">

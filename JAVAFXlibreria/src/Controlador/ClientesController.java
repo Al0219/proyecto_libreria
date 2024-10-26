@@ -6,6 +6,8 @@
 package Controlador;
 
 import Modelo.ClientesTabla;
+import Modelo.ClientesTabla;
+import Modelo.ProveedoresTabla;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
@@ -41,18 +43,16 @@ public class ClientesController implements Initializable {
     private TextField txtDireccion;
     @FXML
     private Button btnCancelar;
-    @FXML
-    private TableColumn<?, ?> nitPersona;
+    private TableColumn<?, ?> nitCliente;
     @FXML
     private TableColumn<?, ?> nombreCliente;
     @FXML
     private TableColumn<?, ?> direccionCliente;
-    @FXML
-    private TableColumn<?, ?> telefonoCliente;
+    private TableColumn<?, ?> TelefonoCliente;
     
     @FXML
     private TableView<ClientesTabla> tblClientes;
-    private Integer nitClientess;
+    private Integer nitClienteV;
     private ObservableList<ClientesTabla> listaClientes;
     
     @FXML
@@ -63,20 +63,25 @@ public class ClientesController implements Initializable {
     private Button btnGuardar;
     @FXML
     private Button btnAnular;
+    @FXML
+    private TableColumn<?, ?> nitPersona;
+    @FXML
+    private TableColumn<?, ?> telefonoCliente;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        mostrar();
         // TODO
     }    
     
     public void mostrar(){
         listaClientes = FXCollections.observableArrayList();
-        for (Iterator it = CRUDs.CRUDUsuarios.universo().iterator(); it.hasNext();){
+        for (Iterator it = CRUDs.CRUDClientes.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
-            listaClientes.add(new ClientesTabla((Integer)item[0],(String)item[1],(String)item[2],(Integer)item[3]));
+            listaClientes.add(new ClientesTabla((Integer)item[0],(String)item[1],(String)item[2], (String)item[3]));
         }
         this.nitPersona.setCellValueFactory(new PropertyValueFactory("nitCliente"));
         this.nombreCliente.setCellValueFactory(new PropertyValueFactory("nombreCliente"));
@@ -90,8 +95,8 @@ public class ClientesController implements Initializable {
         ClientesTabla p = this.tblClientes.getSelectionModel().getSelectedItem();
         txtNombre.setText(p.getNombreCliente());
         txtDireccion.setText(p.getDireccionCliente());
-        txtTelefono.setText(p.getTelefonCliente()+"");
-        nitClientess = p.getNitPersona();
+        txtTelefono.setText(p.getTelefonoCliente());
+        nitClienteV = p.getNitCliente();
         //btnGuardar.setVisible(false);
         //btnModificar.setVisible(true);
         //btnAnular.setVisible(true);
@@ -107,12 +112,11 @@ public class ClientesController implements Initializable {
     @FXML
     private void insertar() {
         try{
-        String nombre, direccion;
-        Integer telefono;
+        String nombre, direccion,Telefono;
         nombre = txtNombre.getText();
         direccion = txtDireccion.getText();
-        telefono = Integer.parseInt(txtTelefono.getText());
-        if(CRUDs.CRUDClientes.crear(nombre, direccion, telefono)){
+        Telefono = txtTelefono.getText();
+        if(CRUDs.CRUDClientes.crear(nombre, direccion, Telefono)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro ingresado");
@@ -139,12 +143,11 @@ public class ClientesController implements Initializable {
     @FXML
     private void modificar() {
         try{
-        String nombre, direccion;
-        Integer telefono;
+        String nombre, direccion, Telefono;
         nombre = txtNombre.getText();
         direccion = txtDireccion.getText();
-       telefono = Integer.parseInt(txtTelefono.getText());
-        if(CRUDs.CRUDClientes.actualizar(getNitCliente(), nombre, direccion, telefono)){
+        Telefono = txtTelefono.getText();
+        if(CRUDs.CRUDClientes.actualizar(getnitClienteV(), nombre, direccion, Telefono)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro modificado");
@@ -180,7 +183,7 @@ public class ClientesController implements Initializable {
     @FXML
     private void anular() {
         try{
-        if(CRUDs.CRUDClientes.anular(getNitCliente())){
+        if(CRUDs.CRUDClientes.anular(getnitClienteV())){
             
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
@@ -248,14 +251,10 @@ public class ClientesController implements Initializable {
             }
         });
     }
-    
-    
-    
-    
-    
-    
-     public Integer getNitCliente() {
-        return nitClientess;
+
+    @FXML
+    public Integer getnitClienteV() {
+        return nitClienteV;
     }
     
 }

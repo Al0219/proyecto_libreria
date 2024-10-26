@@ -7,8 +7,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ProveedoresController">
+<AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="1227.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.ProveedoresController">
     <stylesheets>
-        <URL value="@proveedores.css"/>
+        <URL value="@proveedores.css" />
     </stylesheets>
+   <children>
+      <Label layoutX="62.0" layoutY="83.0" text="Nombre:" />
+      <Label layoutX="62.0" layoutY="145.0" text="Direccion:" />
+      <Label layoutX="65.0" layoutY="210.0" text="Telefono:" />
+      <Button fx:id="btnGuardar" layoutX="62.0" layoutY="272.0" mnemonicParsing="false" onAction="#insertar" text="Guardar proveedor" />
+      <Button fx:id="btnActualizar" layoutX="62.0" layoutY="333.0" mnemonicParsing="false" onAction="#modificar" text="Actualizar proveedor" />
+      <Button fx:id="btnAnular" layoutX="262.0" layoutY="272.0" mnemonicParsing="false" onAction="#anular" text="Eliminar proveedor" />
+      <Button fx:id="btnCancelar" layoutX="319.0" layoutY="333.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <TextField fx:id="txtNombre" layoutX="163.0" layoutY="77.0" prefHeight="39.0" prefWidth="274.0" />
+      <TableView fx:id="tblProveedores" layoutX="470.0" layoutY="72.0" onMouseClicked="#seleccionarModificar" prefHeight="348.0" prefWidth="680.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nombre" prefWidth="203.0" text="Nombre" />
+            <TableColumn fx:id="direccion" prefWidth="258.0" text="Direccion" />
+            <TableColumn fx:id="telefono" prefWidth="143.0" text="Telefono" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtDireccion" layoutX="163.0" layoutY="139.0" prefHeight="39.0" prefWidth="274.0" />
+      <TextField fx:id="txtTelefono" layoutX="163.0" layoutY="204.0" prefHeight="39.0" prefWidth="274.0" />
+   </children>
 </AnchorPane>

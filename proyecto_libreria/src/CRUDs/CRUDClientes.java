@@ -32,7 +32,7 @@ public class CRUDClientes {
             .add(Projections.property("direccionCliente"))
             .add(Projections.property("telefonoCliente"))
             );
-            criteria.addOrder(Order.desc("idCliente"));
+            criteria.addOrder(Order.desc("nitCliente"));
             lista = criteria.list();
         }catch(Exception e){
             System.out.println("error: "+e);

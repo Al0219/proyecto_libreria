@@ -19,7 +19,6 @@ import org.hibernate.criterion.Restrictions;
  * @author 20041
  */
 public class CRUDProductos {
-    Categorias Categorias= new Categorias();
     public static List<Productos>universo(){
         Session session = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         List<Productos> lista=null;
