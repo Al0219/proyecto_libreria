@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -12,21 +15,45 @@
         <URL value="@proveedores.css" />
     </stylesheets>
    <children>
-      <Pane layoutX="14.0" layoutY="12.0" prefHeight="789.0" prefWidth="1249.0">
+      <Pane layoutX="14.0" layoutY="12.0" prefHeight="789.0" prefWidth="1249.0" style="-fx-background-color: #30373e;">
          <children>
-            <Label layoutX="91.0" layoutY="331.0" text="Telefono" />
+            <Label layoutX="91.0" layoutY="331.0" text="Telefono" textFill="WHITE" />
             <TextField fx:id="txtTelefono" layoutX="209.0" layoutY="326.0" />
             <TextField fx:id="txtDireccion" layoutX="209.0" layoutY="253.0" />
             <TextField fx:id="txtNombre" layoutX="209.0" layoutY="174.0" />
          </children>
       </Pane>
-      <Button fx:id="btnAnular" layoutX="162.0" layoutY="537.0" mnemonicParsing="false" onAction="#anular" text="Anular" />
-      <Button fx:id="btnGuardar" layoutX="157.0" layoutY="445.0" mnemonicParsing="false" onAction="#insertar" text="Guardar">
+      <Button fx:id="btnAnular" layoutX="162.0" layoutY="537.0" mnemonicParsing="false" onAction="#anular" text="Anular" textAlignment="CENTER" textFill="#403d3d">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+         <effect>
+            <Bloom threshold="1.0" />
+         </effect>
          <cursor>
-            <Cursor fx:constant="MOVE" />
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+      <Button fx:id="btnGuardar" layoutX="157.0" layoutY="445.0" mnemonicParsing="false" onAction="#insertar" text="Guardar" textAlignment="CENTER" textFill="#403d3d">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
          </cursor>
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+         <effect>
+            <Bloom threshold="1.0" />
+         </effect>
       </Button>
-      <Button fx:id="btnModificar" layoutX="349.0" layoutY="445.0" mnemonicParsing="false" onAction="#modificar" text="Modificar" />
+      <Button fx:id="btnModificar" layoutX="349.0" layoutY="445.0" mnemonicParsing="false" onAction="#modificar" text="Modificar" textAlignment="CENTER" textFill="#403d3d">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+         <effect>
+            <Bloom threshold="1.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
       <TableView fx:id="tblProveedores" layoutX="537.0" layoutY="99.0" onMouseClicked="#seleccionarModificar" prefHeight="469.0" prefWidth="670.0">
          <columns>
             <TableColumn fx:id="nitProveedor" prefWidth="118.0" text="Nit " />
@@ -35,13 +62,25 @@
             <TableColumn fx:id="telefonoProveedor" prefWidth="192.0" text="Telefono" />
          </columns>
       </TableView>
-      <Button fx:id="btnCancelar" layoutX="352.0" layoutY="537.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
-      <Label layoutX="109.0" layoutY="197.0" text="Nombre" />
-      <Label layoutX="105.0" layoutY="272.0" text="Direccion" />
-      <Label layoutX="186.0" layoutY="52.0" prefHeight="55.0" prefWidth="205.0" text="Registros de los Proveedores">
+      <Button fx:id="btnCancelar" layoutX="352.0" layoutY="537.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" textAlignment="CENTER" textFill="#403d3d">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+         <effect>
+            <Bloom threshold="1.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+      <Label layoutX="109.0" layoutY="197.0" text="Nombre" textFill="WHITE" />
+      <Label layoutX="105.0" layoutY="272.0" text="Direccion" textFill="WHITE" />
+      <Label contentDisplay="CENTER" layoutX="186.0" layoutY="52.0" prefHeight="55.0" prefWidth="251.0" text="Registros de los Proveedores" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
       </Label>
    </children>
 </AnchorPane>
