@@ -114,7 +114,7 @@ public class ProveedoresController implements Initializable {
         nombre = txtNombre.getText();
         direccion = txtDireccion.getText();
         telefono = txtTelefono.getText();
-        if(CRUDs.CRUDClientes.crear(nombre, direccion, telefono)){
+        if(CRUDs.CRUDProveedores.crear(nombre, direccion, telefono)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro ingresado");
@@ -146,7 +146,7 @@ public class ProveedoresController implements Initializable {
         nombre = txtNombre.getText();
         direccion = txtDireccion.getText();
        telefono = txtTelefono.getText();
-        if(CRUDs.CRUDClientes.actualizar(getNitProveedor(), nombre, direccion, telefono)){
+        if(CRUDs.CRUDProveedores.actualizar(getNitProveedor(), nombre, direccion, telefono)){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             mostrar();
             alerta.setTitle("Registro modificado");

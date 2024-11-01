@@ -12,12 +12,12 @@
         <URL value="@clientes.css" />
     </stylesheets>
    <children>
-      <Pane layoutX="-3.0" prefHeight="645.0" prefWidth="1221.0">
+      <Pane layoutX="-3.0" prefHeight="645.0" prefWidth="1221.0" style="-fx-background-color: #30373e;">
          <children>
-            <Label layoutX="62.0" layoutY="101.0" text="Nombre" />
+            <Label layoutX="62.0" layoutY="101.0" text="Nombre" textFill="WHITE" />
             <TextField fx:id="txtNombre" layoutX="167.0" layoutY="95.0" prefHeight="39.0" prefWidth="281.0" />
-            <Label layoutX="62.0" layoutY="172.0" text="Direccion" />
-            <Label layoutX="60.0" layoutY="235.0" text="Telefono" />
+            <Label layoutX="62.0" layoutY="172.0" text="Direccion" textFill="WHITE" />
+            <Label layoutX="60.0" layoutY="235.0" text="Telefono" textFill="WHITE" />
             <TextField fx:id="txtDireccion" layoutX="167.0" layoutY="166.0" prefHeight="39.0" prefWidth="281.0" />
             <TextField fx:id="txtTelefono" layoutX="167.0" layoutY="229.0" prefHeight="39.0" prefWidth="281.0" />
             <Button fx:id="btnGuardar" layoutX="63.0" layoutY="319.0" mnemonicParsing="false" onAction="#insertar" text="Guardar cliente">

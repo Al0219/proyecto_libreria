@@ -252,10 +252,11 @@ public class ClientesController implements Initializable {
         });
     }
 
-    @FXML
     public Integer getnitClienteV() {
         return nitClienteV;
     }
+
+
     
 }
     

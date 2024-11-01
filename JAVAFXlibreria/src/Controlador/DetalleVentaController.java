@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.DetalleVentaTabla;
 import Modelo.DetalleVentaTabla;
+import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
@@ -190,7 +191,7 @@ public class DetalleVentaController implements Initializable {
     }
 
     @FXML
-    private void cancelar(ActionEvent event) {
+    private void cancelar(ActionEvent event) throws Exception {
     try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/MenuPrincipal.fxml"));
             Parent root = loader.load();
